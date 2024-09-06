@@ -1,0 +1,105 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\ps04egl\\Documents\\GitHub\\SHOOTMEUP\\ShootEmUp\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{78E6CAD9-4BFD-4B27-AFB4-F3982FC42791}|ShootEmUp\\ShootEmUp.csproj|c:\\users\\ps04egl\\documents\\github\\shootmeup\\shootemup\\shootemup\\bullet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{78E6CAD9-4BFD-4B27-AFB4-F3982FC42791}|ShootEmUp\\ShootEmUp.csproj|solutionrelative:shootemup\\bullet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{78E6CAD9-4BFD-4B27-AFB4-F3982FC42791}|ShootEmUp\\ShootEmUp.csproj|c:\\users\\ps04egl\\documents\\github\\shootmeup\\shootemup\\shootemup\\ship.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{78E6CAD9-4BFD-4B27-AFB4-F3982FC42791}|ShootEmUp\\ShootEmUp.csproj|solutionrelative:shootemup\\ship.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{78E6CAD9-4BFD-4B27-AFB4-F3982FC42791}|ShootEmUp\\ShootEmUp.csproj|c:\\users\\ps04egl\\documents\\github\\shootmeup\\shootemup\\shootemup\\ship.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{78E6CAD9-4BFD-4B27-AFB4-F3982FC42791}|ShootEmUp\\ShootEmUp.csproj|solutionrelative:shootemup\\ship.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{78E6CAD9-4BFD-4B27-AFB4-F3982FC42791}|ShootEmUp\\ShootEmUp.csproj|c:\\users\\ps04egl\\documents\\github\\shootmeup\\shootemup\\shootemup\\ship.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{78E6CAD9-4BFD-4B27-AFB4-F3982FC42791}|ShootEmUp\\ShootEmUp.csproj|solutionrelative:shootemup\\ship.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{78E6CAD9-4BFD-4B27-AFB4-F3982FC42791}|ShootEmUp\\ShootEmUp.csproj|c:\\users\\ps04egl\\documents\\github\\shootmeup\\shootemup\\shootemup\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{78E6CAD9-4BFD-4B27-AFB4-F3982FC42791}|ShootEmUp\\ShootEmUp.csproj|solutionrelative:shootemup\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\ps04egl\\Documents\\GitHub\\SHOOTMEUP\\ShootEmUp\\ShootEmUp\\Program.cs",
+              "RelativeDocumentMoniker": "ShootEmUp\\Program.cs",
+              "ToolTip": "C:\\Users\\ps04egl\\Documents\\GitHub\\SHOOTMEUP\\ShootEmUp\\ShootEmUp\\Program.cs",
+              "RelativeToolTip": "ShootEmUp\\Program.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAIAAAAhAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-06T12:26:23.457Z",
+              "IsPinned": true
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Bullet.cs",
+              "DocumentMoniker": "C:\\Users\\ps04egl\\Documents\\GitHub\\SHOOTMEUP\\ShootEmUp\\ShootEmUp\\Bullet.cs",
+              "RelativeDocumentMoniker": "ShootEmUp\\Bullet.cs",
+              "ToolTip": "C:\\Users\\ps04egl\\Documents\\GitHub\\SHOOTMEUP\\ShootEmUp\\ShootEmUp\\Bullet.cs",
+              "RelativeToolTip": "ShootEmUp\\Bullet.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAswAcAAAAKAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-06T13:48:48.802Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Ship.cs [Conception]",
+              "DocumentMoniker": "C:\\Users\\ps04egl\\Documents\\GitHub\\SHOOTMEUP\\ShootEmUp\\ShootEmUp\\Ship.cs",
+              "RelativeDocumentMoniker": "ShootEmUp\\Ship.cs",
+              "ToolTip": "C:\\Users\\ps04egl\\Documents\\GitHub\\SHOOTMEUP\\ShootEmUp\\ShootEmUp\\Ship.cs [Conception]",
+              "RelativeToolTip": "ShootEmUp\\Ship.cs [Conception]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-06T14:20:45.089Z",
+              "EditorCaption": " [Conception]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Ship.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\ps04egl\\Documents\\GitHub\\SHOOTMEUP\\ShootEmUp\\ShootEmUp\\Ship.Designer.cs",
+              "RelativeDocumentMoniker": "ShootEmUp\\Ship.Designer.cs",
+              "ToolTip": "C:\\Users\\ps04egl\\Documents\\GitHub\\SHOOTMEUP\\ShootEmUp\\ShootEmUp\\Ship.Designer.cs",
+              "RelativeToolTip": "ShootEmUp\\Ship.Designer.cs",
+              "ViewState": "AQIAACQAAAAAAAAAAAAiwDcAAAAoAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-06T13:19:28.064Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Ship.cs",
+              "DocumentMoniker": "C:\\Users\\ps04egl\\Documents\\GitHub\\SHOOTMEUP\\ShootEmUp\\ShootEmUp\\Ship.cs",
+              "RelativeDocumentMoniker": "ShootEmUp\\Ship.cs",
+              "ToolTip": "C:\\Users\\ps04egl\\Documents\\GitHub\\SHOOTMEUP\\ShootEmUp\\ShootEmUp\\Ship.cs",
+              "RelativeToolTip": "ShootEmUp\\Ship.cs",
+              "ViewState": "AQIAABgAAAAAAAAAAAAUwCsAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-06T11:17:34.462Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
