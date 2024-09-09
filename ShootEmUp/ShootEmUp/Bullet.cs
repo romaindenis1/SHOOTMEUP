@@ -17,7 +17,5 @@ public class Bullet
 	public void Shoot(int speed, int damage, int bulletX, int bulletY)
 	{ 
 		Bullet Bullet1 = new Bullet(speed, damage, bulletY, bulletX);
-
 	}
-	
 }

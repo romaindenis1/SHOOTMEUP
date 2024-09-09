@@ -17,11 +17,11 @@ namespace ShootEmUp
             const int y = 350;
 
             if (e.KeyCode == Keys.D)
-            { 
-                x += 3; 
+            {
+                x += 3;
             }
 
-            if (e.KeyCode == Keys.A) 
+            if (e.KeyCode == Keys.A)
             {
                 x -= 3;
             }
@@ -41,26 +41,11 @@ namespace ShootEmUp
             int bulletY = pictureBox1.Location.Y; // Start the bullet from the ship's Y position
 
             Bullet bullet = new Bullet(bulletSpeed, bulletDamage, bulletY, x);
-
         }
-    }
-    public class Bullet
-    {
-        private int speed = 5;
-        private int damage = 1;
-        private int bulletY = 0;
-        public int bulletX = 0;
-        public Bullet(int speed, int damage, int bulletY, int bulletX)
+
+        private void Ship_Load(object sender, EventArgs e)
         {
-            this.speed = speed;
-            this.damage = damage;
-            this.bulletY = bulletY;
-        }
-        public void Shoot(int speed, int damage)
-        {
-            Bullet Bullet1 = new Bullet(speed, damage, bulletY, bulletX);
 
         }
-
     }
 }
