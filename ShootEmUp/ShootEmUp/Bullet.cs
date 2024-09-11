@@ -1,21 +1,31 @@
-﻿using ShootEmUp;
-using System;
-using System.Windows.Forms;
+﻿using System;
+using System.Drawing;
 
-public class Bullet
+namespace ShootEmUp
 {
-    private PictureBox pictureBox2;
-    public int speed = 5;
-	private int damage = 1;
-    private int bulletY = 0;
-	public Bullet(int speed, int damage, int bulletY, int bulletX)
-	{
-		this.speed = speed;
-		this.damage = damage;
-		this.bulletY = bulletY;
-	}
-	public void Shoot(int speed, int damage, int bulletX, int bulletY)
-	{ 
-		Bullet Bullet1 = new Bullet(speed, damage, bulletY, bulletX);
-	}
+    public class Bullet
+    {
+        private int x; 
+        private int y; 
+
+        
+        public Bullet(MoveHelper moveHelper, int startY)
+        {
+           
+            x = moveHelper.GetX();
+            y = startY;
+        }
+
+        
+        public void Move()
+        {
+            y -= 10; 
+        }
+
+        
+        public Point GetPosition()
+        {
+            return new Point(x, y);
+        }
+    }
 }
