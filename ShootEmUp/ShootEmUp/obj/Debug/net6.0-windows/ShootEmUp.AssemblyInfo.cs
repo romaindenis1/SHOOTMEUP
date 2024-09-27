@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ShootEmUp")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+fac930743a4cbdda23154193e02f275475edfde1")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8bd3cee8ad4235cacc5059d90307907b7f093d52")]
 [assembly: System.Reflection.AssemblyProductAttribute("ShootEmUp")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ShootEmUp")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
