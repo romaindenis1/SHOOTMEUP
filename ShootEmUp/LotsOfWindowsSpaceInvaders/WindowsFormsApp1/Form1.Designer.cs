@@ -1,4 +1,4 @@
-﻿namespace YourNamespace // Replace with your actual namespace
+﻿namespace LotOfWindowsSpaceInvader
 {
     partial class Form1
     {

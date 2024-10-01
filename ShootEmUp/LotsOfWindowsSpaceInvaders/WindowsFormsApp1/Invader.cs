@@ -6,10 +6,11 @@ namespace LotOfWindowsSpaceInvader
 {
     public class Invader : Form
     {
-        private PictureBox _invaderImage; 
-        private int _moveSpeed = 5; 
-        private bool _movingRight = true; 
+        private PictureBox _invaderImage;                                                       //ou l'image de l'enemi est
+        private int _moveSpeed = 1;                                                             //vitesse du invader
+        private bool _movingRight = false;                                                       //bool qui permet de bouger les enemis dans le bon sens
 
+        //consructeur du invader
         public Invader(string imagePath)
         {
             InitializeComponent();
@@ -26,6 +27,7 @@ namespace LotOfWindowsSpaceInvader
             this.Size = _invaderImage.Image.Size;
         }
 
+        //methode pour bouger le invader
         public void Move()
         {
             
@@ -44,7 +46,7 @@ namespace LotOfWindowsSpaceInvader
                 if (this.Left <= 0) 
                 {
                     _movingRight = true; 
-                    this.Top += 20; 
+                    this.Top += 175; 
                 }
             }
         }
