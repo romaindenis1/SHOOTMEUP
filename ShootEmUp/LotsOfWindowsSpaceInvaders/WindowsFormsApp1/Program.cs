@@ -2,7 +2,6 @@
 using System;
 using System.Windows.Forms;
 
-//ROMAIN LE PROBLEME EST ICI
 namespace YourNamespace
 {
     class Program
@@ -11,7 +10,7 @@ namespace YourNamespace
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new MenuForm());
         }
     }
 }

@@ -1,56 +1,85 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿// Bullet.cs
+
+using System;
+using System.Drawing;
 using System.Windows.Forms;
 
-public class Bullet : Form
+namespace WindowsFormsApp1
 {
-    private PictureBox _bulletImage;                                                        //ou l'image de la balle est
-    private int _bulletSpeed = 5;                                                           //vitesse de la balle
-    private int _bulletY = 5;                                                               //la position y de le balle
-
-    //consructeur du invader
-    public Bullet(string imagePath, int _bulletY)
+    public class Bullet : Form
     {
-        InitializeComponent();
-        this.FormBorderStyle = FormBorderStyle.None;
-        this.StartPosition = FormStartPosition.Manual;
+        private Timer _bulletTimer; //timer pour bouger
+        private int _speed = 20;  //vitesse de la balle
+
+        public Bullet(string imagePath, Point initialPosition)
+        {
+            this.FormBorderStyle = FormBorderStyle.None;
+            this.StartPosition = FormStartPosition.Manual;
+            this.Location = initialPosition;
+            this.BackColor = Color.Black;
+
+            // Load the bullet image
+            PictureBox _bulletImage = new PictureBox();
+            _bulletImage.Image = Image.FromFile(imagePath);
+            _bulletImage.SizeMode = PictureBoxSizeMode.AutoSize;
+            this.Controls.Add(_bulletImage);
+
+            _bulletImage.Padding = new Padding(0);
+            _bulletImage.Margin = new Padding(0);
+
+            // Set the form's size to fit the picture box
+            this.ClientSize = _bulletImage.Size;
+
+            this.MinimumSize = _bulletImage.Size;
+            this.MaximumSize = _bulletImage.Size;
+
+            //timer de balles 
+            _bulletTimer = new Timer();
+            _bulletTimer.Interval = 3;
+            _bulletTimer.Tick += MoveBullet;
+            _bulletTimer.Start();
+        }
+
+        // Move the bullet upwards
+        private void MoveBullet(object sender, EventArgs e)
+        {
+            this.Top -= _speed; 
+            if (this.Top + this.Height < 0) 
+            {
+                _bulletTimer.Stop();
+                this.Close(); 
+            }
+        }
+
+        // Move the bullet downward
+        private void MoveEvilBullet(object sender, EventArgs e)
+        {
+            this.Top += _speed;
+            if (this.Top + this.Height == 0)
+            {
+                _bulletTimer.Stop();
+                this.Close();
+            }
+        }
 
 
-        _bulletImage = new PictureBox();
 
-        this._bulletY = _bulletY;
+        private void InitializeComponent()
+        {
+            this.SuspendLayout();
+            // 
+            // Bullet
+            // 
+            this.ClientSize = new System.Drawing.Size(1,1);
+            this.Name = "Bullet";
+            this.Load += new System.EventHandler(this.Bullet_Load);
+            this.ResumeLayout(false);
 
-        _bulletImage.SizeMode = PictureBoxSizeMode.AutoSize;
-        this.Controls.Add(_bulletImage);
+        }
 
+        private void Bullet_Load(object sender, EventArgs e)
+        {
 
-        this.Size = _bulletImage.Image.Size;
-    }
-
-    //methode pour bouger le invader
-    public void Shoot()
-    {
-        
-        //jsp fait du code ici a un moment futur
-    }
-
-    private void InitializeComponent()
-    {
-        this.SuspendLayout();
-
-        this.ClientSize = new System.Drawing.Size(284, 261);
-        this.Name = "Bullet";
-        this.Load += new System.EventHandler(this.Bullet_Load);
-        this.ResumeLayout(false);
-    }
-
-    private void Bullet_Load(object sender, EventArgs e)
-    {
-
+        }
     }
 }
-
-
