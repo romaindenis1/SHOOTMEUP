@@ -4,34 +4,34 @@ using System.Windows.Forms;
 
 namespace LotOfWindowsSpaceInvader
 {
-    public class Score : Form
+    public class HUDControl : UserControl
     {
-        private Label _scoreLabel; // Label to display the score
+        private Label _hudLabel; // Label to display score and lives
         private int _scoreValue; // Holds the score value
+        private int _livesValue; // Holds the lives value
         private Timer _textMoveTimer; // Timer to move the text
         private int _textMoveSpeed = 2; // Speed of text movement
         private bool _movingRight = true;
-        public Score()
+
+        public HUDControl()
         {
-            this.FormBorderStyle = FormBorderStyle.None;
             this.BackColor = Color.Black;
-            this.Size = new Size(150, 35);
-            this.StartPosition = FormStartPosition.Manual; 
-            this.Location = new Point(0, 7); // en haut a gauche
+            this.Size = new Size(300, 35); // Adjust width to fit both score and lives
 
-            // Initialize and configure label
-            _scoreLabel = new Label();
-            _scoreLabel.ForeColor = Color.White; // Set text color to white
-            _scoreLabel.Font = new Font("Arial",16, FontStyle.Bold); //police
-            _scoreLabel.Dock = DockStyle.Fill; // rend le text aussi grand que la fenetre
-            _scoreLabel.TextAlign = ContentAlignment.MiddleCenter;
+            // Initialize and configure the HUD label
+            _hudLabel = new Label();
+            _hudLabel.ForeColor = Color.White; // Set text color to white
+            _hudLabel.Font = new Font("Arial", 16, FontStyle.Bold);
+            _hudLabel.Dock = DockStyle.Fill; // Fill the entire user control
+            _hudLabel.TextAlign = ContentAlignment.MiddleCenter;
 
-            // Add label to the form
-            this.Controls.Add(_scoreLabel);
+            // Add label to the user control
+            this.Controls.Add(_hudLabel);
 
-            // Initialize score value and display it
+            // Initialize score and lives values
             _scoreValue = 0;
-            UpdateScoreDisplay();
+            _livesValue = 3; // Set initial lives
+            UpdateHUDDisplay();
 
             _textMoveTimer = new Timer();
             _textMoveTimer.Interval = 20; // Interval to move the text
@@ -43,14 +43,25 @@ namespace LotOfWindowsSpaceInvader
         public void IncreaseScore()
         {
             _scoreValue += 1;
-            UpdateScoreDisplay();
+            UpdateHUDDisplay();
         }
 
-        // Updates the score display
-        private void UpdateScoreDisplay()
+        // Method to decrease lives by 1
+        public void DecreaseLives()
         {
-            _scoreLabel.Text = "Score: " + _scoreValue.ToString();
+            if (_livesValue > 0)
+            {
+                _livesValue -= 1;
+                UpdateHUDDisplay();
+            }
         }
+
+        // Updates the HUD display
+        private void UpdateHUDDisplay()
+        {
+            _hudLabel.Text = $"Score: {_scoreValue}   Lives: {_livesValue}"; // Display both score and lives in one line
+        }
+
         private void MoveWindow(object sender, EventArgs e)
         {
             // Move horizontally
@@ -66,25 +77,6 @@ namespace LotOfWindowsSpaceInvader
                 if (this.Left <= 0) // If window reaches the left edge, change direction
                     _movingRight = true;
             }
-        }
-
-        private void InitializeComponent()
-        {
-            this.SuspendLayout();
-            // 
-            // Score
-            // 
-            this.ClientSize = new System.Drawing.Size(284, 261);
-            this.Name = "Score";
-            this.Load += new System.EventHandler(this.Score_Load);
-            this.ResumeLayout(false);
-
-        }
-
-        private void Score_Load(object sender, EventArgs e)
-        {
-
-
         }
     }
 }

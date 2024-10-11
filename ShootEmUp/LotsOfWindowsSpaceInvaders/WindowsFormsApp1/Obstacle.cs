@@ -9,7 +9,7 @@ namespace LotOfWindowsSpaceInvader
     {
         private PictureBox _obstacleImage;
         private Timer _moveTimer;
-        private int _moveSpeed = 5; // Adjust this value to change the speed of the obstacle
+        private int _moveSpeed = 5; // vitesse oublie de change aussi
         private bool _movingRight;
 
         public Obstacle(string imagePath, bool movingRight)
@@ -36,7 +36,7 @@ namespace LotOfWindowsSpaceInvader
 
             _moveTimer = new Timer
             {
-                Interval = 50 // Adjust this value to change how often the obstacle moves
+                Interval = 50 // oublie pas de changer ca
             };
             _moveTimer.Tick += MoveObstacle;
             _moveTimer.Start();
@@ -79,14 +79,29 @@ namespace LotOfWindowsSpaceInvader
         private void InitializeComponent()
         {
             this.SuspendLayout();
-            this.ClientSize = new System.Drawing.Size(50, 50);
+            // 
+            // Obstacle
+            // 
+            this.ClientSize = new System.Drawing.Size(120, 50);
             this.Name = "Obstacle";
+            this.Load += new System.EventHandler(this.Obstacle_Load);
             this.ResumeLayout(false);
+
         }
 
         public bool BlocksBullet(Bullet bullet)
         {
             return this.Bounds.IntersectsWith(bullet.Bounds);
+        }
+
+        public bool BlocksEvilBullet(EvilBullet evilBullet)
+        {
+            return this.Bounds.IntersectsWith(evilBullet.Bounds);
+        }
+
+        private void Obstacle_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

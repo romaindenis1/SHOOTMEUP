@@ -3,26 +3,32 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
 using WindowsFormsApp1;
+using LotOfWindowsSpaceInvader;
+using System.Linq;
 
 namespace LotOfWindowsSpaceInvader 
 {
     public partial class Form1 : Form
     {
+       
+        private List<EvilBullet> _evilBullets = new List<EvilBullet>();                                     //liste de mauvaises balles
         private List<Invader> _invaders = new List<Invader>();                                              //liste de enemis
         private List<Bullet> _bullets = new List<Bullet>();                                                 //liste de balles
-        private Timer _moveTimer;                                                                           //le timer pour bouger
+        private List<Obstacle> _obstacles = new List<Obstacle>();                                           //liste de obstacles
+
+        private Timer _evilBulletMoveTimer;                                                                 //timer pour bouger mauvaises balles
+        private Timer _moveTimer;                                                                           //timer pour bouger
+        private Timer _collisionTimer;                                                                      //timer qui regarde les collisions
+        private Timer _obstacleSpawnTimer;                                                                  //timer qui spawn des obstacles
+
         private int _moveSpeed = 20;                                                                        //la vitesse du vaisseau
         private PictureBox _playerShip;                                                                     //la picturebox du vaisseau
-        private Timer _collisionTimer;
-        private Score _scoreWindow;
-        private List<Obstacle> _obstacles = new List<Obstacle>();
-        private Timer _obstacleSpawnTimer;
+        private HUD _hudDisplay;
+
+
         public Form1()
         {
-            InitializeComponent();
-
-            // Couleur de fond
-            
+            InitializeComponent();            
 
             // Style de barre en haut
             this.FormBorderStyle = FormBorderStyle.None;
@@ -51,6 +57,7 @@ namespace LotOfWindowsSpaceInvader
 
             int spacing = 100;                                                                                  //entier qui met l'espace entre les enemis
 
+
             //met des invaders
             for (int i = 0; i <= 10; i++) 
             {
@@ -60,8 +67,8 @@ namespace LotOfWindowsSpaceInvader
                 invader.Show(); 
                 _invaders.Add(invader); 
             }
-            _scoreWindow = new Score();
-            _scoreWindow.Show();
+            _hudDisplay = new HUD();
+            _hudDisplay.Show();
 
 
             StartTimers();
@@ -92,8 +99,6 @@ namespace LotOfWindowsSpaceInvader
             return base.ProcessCmdKey(ref msg, keyData);
         }
 
-
-
         //bouger les enemis
         private void MoveInvaders(object sender, EventArgs e)
         {
@@ -118,8 +123,9 @@ namespace LotOfWindowsSpaceInvader
 
         private void CheckCollisions()
         {
-            List<Bullet> bulletsToRemove = new List<Bullet>();                                                                  //liste qui contient la balles a enlever
-            List<Invader> invadersToRemove = new List<Invader>();                                                               //liste qui contient la enemis a enlever
+            List<Bullet> bulletsToRemove = new List<Bullet>();
+            List<Invader> invadersToRemove = new List<Invader>();
+            List<EvilBullet> evilBulletsToRemove = new List<EvilBullet>(); //liste de mauvaise balle a enlever
 
             foreach (Bullet bullet in _bullets)
             {
@@ -129,24 +135,81 @@ namespace LotOfWindowsSpaceInvader
                     {
                         bulletsToRemove.Add(bullet);
                         invadersToRemove.Add(invader);
-
-                        _scoreWindow.IncreaseScore();
+                        _hudDisplay.IncreaseScore();
                     }
                 }
             }
-            
+
+            foreach (EvilBullet evilbullet in _evilBullets.ToList())
+            {
+                if (evilbullet.IsDisposed)
+                {
+                    _evilBullets.Remove(evilbullet);
+                    continue;
+                }
+                //Beaucoup de maths qui ma pri 3 jours pour detecter les collisions que j'aime pas du tout
+                Point evilbulletPoint = evilbullet.PointToScreen(new Point(0, 0));
+                Rectangle evilbulletRect = new Rectangle(evilbulletPoint.X, evilbulletPoint.Y, evilbullet.Width, evilbullet.Height);
+
+                Point playerShipPoint = _playerShip.PointToScreen(new Point(0, 0));
+                Rectangle playerShipRect = new Rectangle(playerShipPoint.X, playerShipPoint.Y, _playerShip.Width, _playerShip.Height);
+
+                Rectangle intersection = Rectangle.Intersect(evilbulletRect, playerShipRect);
+                Console.WriteLine($"Intersection: {intersection.Width}x{intersection.Height}");
+                if (intersection.Width > 0 && intersection.Height > 0)
+                {
+                    evilBulletsToRemove.Add(evilbullet);
+                    _hudDisplay.DecreaseLives();
+                    Console.WriteLine("Collision detected!");
+                }
+            }
+
+            //balles
             foreach (Bullet bullet in bulletsToRemove)
             {
                 bullet.Close(); //ferme la fenetre
-                _bullets.Remove(bullet); //enleve d'item de la liste principale
+                _bullets.Remove(bullet); //eneleve de la liste
             }
 
+            foreach (Obstacle obstacle in _obstacles)
+            {
+                foreach (Bullet bullet in _bullets)
+                {
+                    if (obstacle.BlocksBullet(bullet))
+                    {
+                        // enleve balle et obstacle
+                        bulletsToRemove.Add(bullet);
+                        obstacle.Close();
+                    }
+                }
+
+                foreach (EvilBullet evilBullet in _evilBullets)
+                {
+                    if (obstacle.BlocksEvilBullet(evilBullet))
+                    {
+                        // enleve balle et obstacle
+                        evilBulletsToRemove.Add(evilBullet);
+                        obstacle.Close();
+                    }
+                }
+            }
+
+            //enemis
             foreach (Invader invader in invadersToRemove)
             {
                 invader.Close(); //ferme la fenetre
-                _invaders.Remove(invader); //enleve d'item de la liste principale
+                _invaders.Remove(invader); //eneleve de la liste
             }
+
+            //balle mechant
+            foreach (EvilBullet evilBullet in evilBulletsToRemove)
+            {
+                evilBullet.Dispose(); //ferme la fenetre
+                _evilBullets.Remove(evilBullet); //eneleve de la liste
+            }
+            
         }
+
 
         private void StartTimers()
         {
@@ -168,16 +231,82 @@ namespace LotOfWindowsSpaceInvader
             _obstacleSpawnTimer.Tick += SpawnObstacle;
             _obstacleSpawnTimer.Start();
 
+            //timer pour tirer mechantes balles
+            Timer evilBulletShootTimer = new Timer();
+            evilBulletShootTimer.Interval = 2000; //tire tout les 2 secondes
+            evilBulletShootTimer.Tick += (sender, e) => ShootEvilBullet();
+            evilBulletShootTimer.Start();
+
+            _evilBulletMoveTimer = new Timer();
+            _evilBulletMoveTimer.Interval = 2000; 
+            _evilBulletMoveTimer.Tick += (sender, e) => ShootEvilBullet(); // Apelle methode ShootEvilBullet 
+            _evilBulletMoveTimer.Start();
+
+        }
+        private void ShootEvilBullet()
+        {
+            // prend un random enemi
+            if (_invaders.Count > 0)
+            {
+                Random random = new Random();
+                int randomIndex = random.Next(_invaders.Count);
+                Invader invader = _invaders[randomIndex];
+
+                // cree une balle
+                Point bulletPosition = new Point(invader.Location.X + invader.Width / 2, invader.Location.Y + invader.Height);
+                EvilBullet evilBullet = new EvilBullet("evilbullet.png", bulletPosition); 
+                evilBullet.Show();
+
+                // ajoute a la liste
+                _evilBullets.Add(evilBullet);
+
+                //alt tab
+                this.Focus();
+            }
         }
 
+        private void EnemyShootTimer_Tick(object sender, EventArgs e)
+        {
+            if (_invaders.Count == 0) return; 
 
+            Random random = new Random();
+            int randomIndex = random.Next(_invaders.Count); 
+            Invader shootingEnemy = _invaders[randomIndex];
+
+            
+            EvilBullet evilBullet = new EvilBullet("evilbullet.png", new Point(shootingEnemy.Left + (shootingEnemy.Width / 2) - 5, shootingEnemy.Bottom));
+            this.Controls.Add(evilBullet); 
+        }
+
+        private void MoveEvilBullets()
+        {
+            List<EvilBullet> bulletsToRemove = new List<EvilBullet>();
+
+            foreach (var evilBullet in _evilBullets)
+            {
+                evilBullet.Top += 10; //descend balle
+
+                //check si balle sort de l'ecran
+                if (evilBullet.Top > this.ClientSize.Height)
+                {
+                    bulletsToRemove.Add(evilBullet);
+                }
+            }
+
+            //enleve balle si elle sort de l'ecran
+            foreach (var bullet in bulletsToRemove)
+            {
+                bullet.Dispose();
+                _evilBullets.Remove(bullet);
+            }
+        }
         private void SpawnObstacle(object sender, EventArgs e)
         {
             bool movingRight = new Random().NextDouble() < 0.5;                                 //genere une bool etre true et false pour savoir dans quel sens bouge l'object
-            Obstacle obstacle = new Obstacle("bullet.png", movingRight);                        //cree un obstacle
+            Obstacle obstacle = new Obstacle("obstacle.png", movingRight);                      //cree un obstacle
             _obstacles.Add(obstacle);                                                           //ajoute a la liste
 
-            this.Focus();
+            this.Focus();                                                                       //remet sur la bonne fenetre
         }
 
 

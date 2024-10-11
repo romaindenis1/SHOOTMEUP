@@ -27,4 +27,7 @@ C:\Users\ps04egl\Documents\GitHub\SHOOTMEUP\ShootEmUp\LotsOfWindowsSpaceInvaders
 C:\Users\ps04egl\Documents\GitHub\SHOOTMEUP\ShootEmUp\LotsOfWindowsSpaceInvaders\WindowsFormsApp1\bin\Debug\background.png
 C:\Users\ps04egl\Documents\GitHub\SHOOTMEUP\ShootEmUp\LotsOfWindowsSpaceInvaders\WindowsFormsApp1\bin\Debug\bullet.png
 C:\Users\ps04egl\Documents\GitHub\SHOOTMEUP\ShootEmUp\LotsOfWindowsSpaceInvaders\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Bullet.resources
-C:\Users\ps04egl\Documents\GitHub\SHOOTMEUP\ShootEmUp\LotsOfWindowsSpaceInvaders\WindowsFormsApp1\obj\Debug\LotOfWindowsSpaceInvader.Score.resources
+C:\Users\ps04egl\Documents\GitHub\SHOOTMEUP\ShootEmUp\LotsOfWindowsSpaceInvaders\WindowsFormsApp1\bin\Debug\evilbullet.png
+C:\Users\ps04egl\Documents\GitHub\SHOOTMEUP\ShootEmUp\LotsOfWindowsSpaceInvaders\WindowsFormsApp1\bin\Debug\obstacle.png
+C:\Users\ps04egl\Documents\GitHub\SHOOTMEUP\ShootEmUp\LotsOfWindowsSpaceInvaders\WindowsFormsApp1\obj\Debug\EvilBullet.resources
+C:\Users\ps04egl\Documents\GitHub\SHOOTMEUP\ShootEmUp\LotsOfWindowsSpaceInvaders\WindowsFormsApp1\obj\Debug\LotOfWindowsSpaceInvader.Obstacle.resources
