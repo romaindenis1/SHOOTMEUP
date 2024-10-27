@@ -6,15 +6,18 @@ using WindowsFormsApp1;
 using LotOfWindowsSpaceInvader;
 using System.Linq;
 
-namespace LotOfWindowsSpaceInvader 
+namespace LotOfWindowsSpaceInvader
 {
     public partial class Form1 : Form
     {
-       
+
         private List<EvilBullet> _evilBullets = new List<EvilBullet>();                                     //liste de mauvaises balles
         private List<Invader> _invaders = new List<Invader>();                                              //liste de enemis
         private List<Bullet> _bullets = new List<Bullet>();                                                 //liste de balles
         private List<Obstacle> _obstacles = new List<Obstacle>();                                           //liste de obstacles
+        List<Bullet> bulletsToRemove = new List<Bullet>();
+        List<Invader> invadersToRemove = new List<Invader>();
+        List<EvilBullet> evilBulletsToRemove = new List<EvilBullet>();                                      //liste de mauvaise balle a enlever
 
         private Timer _evilBulletMoveTimer;                                                                 //timer pour bouger mauvaises balles
         private Timer _moveTimer;                                                                           //timer pour bouger
@@ -25,10 +28,11 @@ namespace LotOfWindowsSpaceInvader
         private PictureBox _playerShip;                                                                     //la picturebox du vaisseau
         private HUD _hudDisplay;
 
-
+        private bool _isGameOver = false;                                                                   //pour check si le jeux est fini
+        private bool _isMenuOpen = false;                                                                   //bool bete pour que le menu est la que 1 fois
         public Form1()
         {
-            InitializeComponent();            
+            InitializeComponent();
 
             // Style de barre en haut
             this.FormBorderStyle = FormBorderStyle.None;
@@ -36,8 +40,8 @@ namespace LotOfWindowsSpaceInvader
             // Setup PictureBox
             _playerShip = new PictureBox
             {
-                Image = Image.FromFile("spaceship.png"), 
-                SizeMode = PictureBoxSizeMode.AutoSize 
+                Image = Image.FromFile("spaceship.png"),
+                SizeMode = PictureBoxSizeMode.AutoSize
             };
 
             // Met la taille de la fenêtre égal à la taille de l'image
@@ -45,7 +49,7 @@ namespace LotOfWindowsSpaceInvader
 
             // Calcul pour mettre le vaisseau en bas au milieu
             _playerShip.Location = new Point((this.ClientSize.Width - _playerShip.Width) / 2, (this.ClientSize.Height - _playerShip.Height) / 2);
-            this.Controls.Add(_playerShip); 
+            this.Controls.Add(_playerShip);
 
             // Calcul pour mettre la fenêtre en bas au milieu
             this.StartPosition = FormStartPosition.Manual;
@@ -59,13 +63,13 @@ namespace LotOfWindowsSpaceInvader
 
 
             //met des invaders
-            for (int i = 0; i <= 10; i++) 
+            for (int i = 0; i <= 10; i++)
             {
-                Invader invader = new Invader("enemy.png"); 
-                invader.StartPosition = FormStartPosition.Manual; 
-                invader.Location = new Point(i * (100 + spacing), 50); 
-                invader.Show(); 
-                _invaders.Add(invader); 
+                Invader invader = new Invader("enemy.png");
+                invader.StartPosition = FormStartPosition.Manual;
+                invader.Location = new Point(i * (100 + spacing), 50);
+                invader.Show();
+                _invaders.Add(invader);
             }
             _hudDisplay = new HUD();
             _hudDisplay.Show();
@@ -113,8 +117,8 @@ namespace LotOfWindowsSpaceInvader
             Point bulletPosition = new Point(this.Location.X + this.Width / 2 - 10, this.Location.Y - 20);
 
             //creation de balle
-            Bullet bullet = new Bullet("bullet.png", bulletPosition); 
-            bullet.Show(); 
+            Bullet bullet = new Bullet("bullet.png", bulletPosition);
+            bullet.Show();
             _bullets.Add(bullet);
 
             //pour rester dans la fenetre form1 et pouvoir bouger
@@ -123,10 +127,17 @@ namespace LotOfWindowsSpaceInvader
 
         private void CheckCollisions()
         {
-            List<Bullet> bulletsToRemove = new List<Bullet>();
-            List<Invader> invadersToRemove = new List<Invader>();
-            List<EvilBullet> evilBulletsToRemove = new List<EvilBullet>(); //liste de mauvaise balle a enlever
+            if (_hudDisplay._scoreValue == 10)
+            {
+                _isGameOver = true; // Prevent multiple openings
+                using (GameOverWindow gameOverWindow = new GameOverWindow("You Win!"))
+                {
+                    gameOverWindow.ShowDialog();
+                }
 
+                // Call ReturnToMainMenu only if the menu is not open
+                ReturnToMainMenu();
+            }
             foreach (Bullet bullet in _bullets)
             {
                 foreach (Invader invader in _invaders)
@@ -155,12 +166,11 @@ namespace LotOfWindowsSpaceInvader
                 Rectangle playerShipRect = new Rectangle(playerShipPoint.X, playerShipPoint.Y, _playerShip.Width, _playerShip.Height);
 
                 Rectangle intersection = Rectangle.Intersect(evilbulletRect, playerShipRect);
-                Console.WriteLine($"Intersection: {intersection.Width}x{intersection.Height}");
                 if (intersection.Width > 0 && intersection.Height > 0)
                 {
                     evilBulletsToRemove.Add(evilbullet);
                     _hudDisplay.DecreaseLives();
-                    Console.WriteLine("Collision detected!");
+                    CheckIfDead();
                 }
             }
 
@@ -207,7 +217,7 @@ namespace LotOfWindowsSpaceInvader
                 evilBullet.Dispose(); //ferme la fenetre
                 _evilBullets.Remove(evilBullet); //eneleve de la liste
             }
-            
+
         }
 
 
@@ -221,7 +231,7 @@ namespace LotOfWindowsSpaceInvader
 
             //timer pour les collisions
             _collisionTimer = new Timer();
-            _collisionTimer.Interval = 1; 
+            _collisionTimer.Interval = 1;
             _collisionTimer.Tick += (sender, e) => CheckCollisions();
             _collisionTimer.Start();
 
@@ -238,7 +248,7 @@ namespace LotOfWindowsSpaceInvader
             evilBulletShootTimer.Start();
 
             _evilBulletMoveTimer = new Timer();
-            _evilBulletMoveTimer.Interval = 2000; 
+            _evilBulletMoveTimer.Interval = 2000;
             _evilBulletMoveTimer.Tick += (sender, e) => ShootEvilBullet(); // Apelle methode ShootEvilBullet 
             _evilBulletMoveTimer.Start();
 
@@ -254,7 +264,7 @@ namespace LotOfWindowsSpaceInvader
 
                 // cree une balle
                 Point bulletPosition = new Point(invader.Location.X + invader.Width / 2, invader.Location.Y + invader.Height);
-                EvilBullet evilBullet = new EvilBullet("evilbullet.png", bulletPosition); 
+                EvilBullet evilBullet = new EvilBullet("evilbullet.png", bulletPosition);
                 evilBullet.Show();
 
                 // ajoute a la liste
@@ -267,17 +277,18 @@ namespace LotOfWindowsSpaceInvader
 
         private void EnemyShootTimer_Tick(object sender, EventArgs e)
         {
-            if (_invaders.Count == 0) return; 
+            if (_invaders.Count == 0) return;
 
             Random random = new Random();
-            int randomIndex = random.Next(_invaders.Count); 
+            int randomIndex = random.Next(_invaders.Count);
             Invader shootingEnemy = _invaders[randomIndex];
 
-            
+
             EvilBullet evilBullet = new EvilBullet("evilbullet.png", new Point(shootingEnemy.Left + (shootingEnemy.Width / 2) - 5, shootingEnemy.Bottom));
-            this.Controls.Add(evilBullet); 
+            this.Controls.Add(evilBullet);
         }
 
+        //bouger les balles enemis
         private void MoveEvilBullets()
         {
             List<EvilBullet> bulletsToRemove = new List<EvilBullet>();
@@ -300,6 +311,7 @@ namespace LotOfWindowsSpaceInvader
                 _evilBullets.Remove(bullet);
             }
         }
+        //fait des obstacles
         private void SpawnObstacle(object sender, EventArgs e)
         {
             bool movingRight = new Random().NextDouble() < 0.5;                                 //genere une bool etre true et false pour savoir dans quel sens bouge l'object
@@ -308,7 +320,109 @@ namespace LotOfWindowsSpaceInvader
 
             this.Focus();                                                                       //remet sur la bonne fenetre
         }
+        //regarde si joueur est mort
+        private void CheckIfDead()
+        {
+            if (_hudDisplay != null && _hudDisplay.GetLivesValue() == 0 && !_isGameOver)
+            {
+                _isGameOver = true; // Prevent multiple openings
+                using (GameOverWindow gameOverWindow = new GameOverWindow("Game Over!"))
+                {
+                    gameOverWindow.ShowDialog();
+                }
 
+                // Call ReturnToMainMenu only if the menu is not open
+                ReturnToMainMenu();
+            }
+        }
+
+        //methode pour enlever tout
+        private void ReturnToMainMenu()
+        {
+            // Clean up game elements
+            foreach (var bullet in _bullets.ToList())
+            {
+                bullet.Close();
+            }
+            _bullets.Clear();
+
+            foreach (var evilBullet in _evilBullets.ToList())
+            {
+                evilBullet.Close();
+            }
+            _evilBullets.Clear();
+
+            foreach (var invader in _invaders.ToList())
+            {
+                invader.Close();
+            }
+            _invaders.Clear();
+
+            foreach (var obstacle in _obstacles.ToList())
+            {
+                obstacle.Close();
+            }
+            _obstacles.Clear();
+
+            _hudDisplay.Close();
+
+            this.Focus();
+
+            // Reset the HUD
+            _hudDisplay.ResetHUD();
+
+            // Reset the game state
+            _isGameOver = false; // Allow the game to start again
+
+            // Open the main menu
+            MenuForm MenuForm = new MenuForm();
+            MenuForm.Show(); // Show the main menu
+            this.Hide(); // Close the current game form
+        }
+
+        //reset tout les timers
+        private void ResetTimers()
+        {
+
+            if (_isMenuOpen)
+            {
+                return;
+            }
+            _isMenuOpen = true;
+            // Stop and dispose of each timer
+            if (_moveTimer != null)
+            {
+                _moveTimer.Stop();
+                _moveTimer.Dispose();
+                _moveTimer = null;
+            }
+
+            if (_collisionTimer != null)
+            {
+                _collisionTimer.Stop();
+                _collisionTimer.Dispose();
+                _collisionTimer = null;
+            }
+
+            if (_obstacleSpawnTimer != null)
+            {
+                _obstacleSpawnTimer.Stop();
+                _obstacleSpawnTimer.Dispose();
+                _obstacleSpawnTimer = null;
+            }
+
+            if (_evilBulletMoveTimer != null)
+            {
+                _evilBulletMoveTimer.Stop();
+                _evilBulletMoveTimer.Dispose();
+                _evilBulletMoveTimer = null;
+            }
+        }
+        private void ResetGame()
+        {
+            _isGameOver = false;
+            _isMenuOpen = false;
+        }
 
         private void Form1_Load(object sender, EventArgs e)
         {

@@ -7,8 +7,8 @@ namespace LotOfWindowsSpaceInvader
     public class HUD : Form
     {
         private Label _hudLabel;                                    // label qui display
-        private int _scoreValue;                                    // la valeur du score
-        private int _livesValue;                                    // valeurs des vies
+        public int _scoreValue;                                     // la valeur du score
+        public int _livesValue { get; private set; }                // valeurs des vies
         private Timer _textMoveTimer;                               // Timer pour bouger le texte
         private int _textMoveSpeed = 2;                             // vitesse
         private bool _movingRight = true;                           //si ca bouge vers la droite au debut ou pas
@@ -39,7 +39,9 @@ namespace LotOfWindowsSpaceInvader
             _textMoveTimer = new Timer();
             _textMoveTimer.Interval = 20; 
             _textMoveTimer.Tick += MoveWindow; 
-            _textMoveTimer.Start(); 
+            _textMoveTimer.Start();
+            
+
         }
 
         //met un score de plus
@@ -47,8 +49,8 @@ namespace LotOfWindowsSpaceInvader
         {
             _scoreValue += 1;
             UpdateHUDDisplay();
+            
         }
-
         //enleve 1 vie
         public void DecreaseLives()
         {
@@ -58,7 +60,10 @@ namespace LotOfWindowsSpaceInvader
                 UpdateHUDDisplay();
             }
         }
-
+        public int GetLivesValue()
+        {
+            return _livesValue;
+        }
         //update la hud
         private void UpdateHUDDisplay()
         {
@@ -93,7 +98,13 @@ namespace LotOfWindowsSpaceInvader
             this.ResumeLayout(false);
 
         }
-
+        //reset le hud
+        public void ResetHUD()
+        {
+            _livesValue = 3; //Reset lives 
+            _scoreValue = 0; //Reset score 
+            UpdateHUDDisplay(); 
+        }
         private void HUDControl_Load(object sender, EventArgs e)
         {
 
