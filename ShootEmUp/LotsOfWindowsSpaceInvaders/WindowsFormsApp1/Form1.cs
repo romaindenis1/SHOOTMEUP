@@ -28,6 +28,8 @@ namespace LotOfWindowsSpaceInvader
         private PictureBox _playerShip;                                                                     //la picturebox du vaisseau
         private HUD _hudDisplay;
 
+        private double _invaderSpeedMultiplier = 1.0;                                                       //Double pour ajouter de la vitesse a chaque wave
+        private int _waveNumber = 0;                                                                        //Le nombre de wave que le joueur a tue
         private bool _isGameOver = false;                                                                   //pour check si le jeux est fini
         private bool _isMenuOpen = false;                                                                   //bool bete pour que le menu est la que 1 fois
         public Form1()
@@ -61,16 +63,8 @@ namespace LotOfWindowsSpaceInvader
 
             int spacing = 100;                                                                                  //entier qui met l'espace entre les enemis
 
+            SpawnNewWave();
 
-            //met des invaders
-            for (int i = 0; i <= 10; i++)
-            {
-                Invader invader = new Invader("enemy.png");
-                invader.StartPosition = FormStartPosition.Manual;
-                invader.Location = new Point(i * (100 + spacing), 50);
-                invader.Show();
-                _invaders.Add(invader);
-            }
             _hudDisplay = new HUD();
             _hudDisplay.Show();
 
@@ -108,7 +102,7 @@ namespace LotOfWindowsSpaceInvader
         {
             foreach (var invader in _invaders)
             {
-                invader.Move();
+                invader.Move(_invaderSpeedMultiplier); // Pass the speed multiplier to each invader's move method
             }
         }
         private void ShootBullet()
@@ -127,16 +121,15 @@ namespace LotOfWindowsSpaceInvader
 
         private void CheckCollisions()
         {
-            if (_hudDisplay._scoreValue == 10)
-            {
-                _isGameOver = true; // Prevent multiple openings
-                using (GameOverWindow gameOverWindow = new GameOverWindow("You Win!"))
-                {
-                    gameOverWindow.ShowDialog();
-                }
 
-                // Call ReturnToMainMenu only if the menu is not open
-                ReturnToMainMenu();
+            if (((int)_hudDisplay._scoreValue % 10) == 0 && _hudDisplay._scoreValue != 0)
+            {
+                for (int i = 0; i < 1; i++)
+                {
+                    _waveNumber = 0;
+                    _invaderSpeedMultiplier += 0.1;
+                    SpawnNewWave();
+                }
             }
             foreach (Bullet bullet in _bullets)
             {
@@ -423,7 +416,18 @@ namespace LotOfWindowsSpaceInvader
             _isGameOver = false;
             _isMenuOpen = false;
         }
-
+        public void SpawnNewWave()
+        {
+            int spacing = 100;
+            for (int i = 0; i <= 10 + _waveNumber; i++)
+            {
+                Invader invader = new Invader("enemy.png");
+                invader.StartPosition = FormStartPosition.Manual;
+                invader.Location = new Point(i * (100 + spacing), 50);
+                invader.Show();
+                _invaders.Add(invader);
+            }
+        }
         private void Form1_Load(object sender, EventArgs e)
         {
 

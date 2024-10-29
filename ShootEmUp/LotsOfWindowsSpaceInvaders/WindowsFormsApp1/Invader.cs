@@ -36,25 +36,27 @@ namespace LotOfWindowsSpaceInvader
         }
 
         //methode pour bouger le invader
-        public void Move()
+        public void Move(double speedMultiplier = 1.0)
         {
-            
+            // Apply the speed multiplier to the current move speed
+            int adjustedSpeed = (int)(_moveSpeed * speedMultiplier);
+
             if (_movingRight)
             {
-                this.Left += _moveSpeed;
-                if (this.Right >= Screen.PrimaryScreen.WorkingArea.Width) 
+                this.Left += adjustedSpeed;
+                if (this.Right >= Screen.PrimaryScreen.WorkingArea.Width)
                 {
-                    _movingRight = false; 
-                    this.Top += 175; 
+                    _movingRight = false;
+                    this.Top += 175;
                 }
             }
             else
             {
-                this.Left -= _moveSpeed;
-                if (this.Left <= 0) 
+                this.Left -= adjustedSpeed;
+                if (this.Left <= 0)
                 {
-                    _movingRight = true; 
-                    this.Top += 175; 
+                    _movingRight = true;
+                    this.Top += 175;
                 }
             }
         }
