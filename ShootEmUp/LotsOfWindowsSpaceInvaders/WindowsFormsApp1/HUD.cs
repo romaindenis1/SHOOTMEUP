@@ -44,14 +44,18 @@ namespace LotOfWindowsSpaceInvader
 
         }
 
-        //met un score de plus
+        /// <summary>
+        /// Ajoute du score
+        /// </summary>
         public void IncreaseScore()
         {
             _scoreValue += 1;
             UpdateHUDDisplay();
             
         }
-        //enleve 1 vie
+        /// <summary>
+        /// Enleve une vie
+        /// </summary>
         public void DecreaseLives()
         {
             if (_livesValue > 0)
@@ -60,16 +64,26 @@ namespace LotOfWindowsSpaceInvader
                 UpdateHUDDisplay();
             }
         }
+        /// <summary>
+        /// Donne le nombre de vies
+        /// </summary>
+        /// <returns>La vie</returns>
         public int GetLivesValue()
         {
             return _livesValue;
         }
-        //update la hud
+        /// <summary>
+        /// Update la hud
+        /// </summary>
         private void UpdateHUDDisplay()
         {
             _hudLabel.Text = $"Score: {_scoreValue}   Lives: {_livesValue}"; //display
         }
-
+        /// <summary>
+        /// bouge la fenetre
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void MoveWindow(object sender, EventArgs e)
         {
             // Move horizontally
@@ -98,7 +112,9 @@ namespace LotOfWindowsSpaceInvader
             this.ResumeLayout(false);
 
         }
-        //reset le hud
+        /// <summary>
+        /// Reset la hud
+        /// </summary>
         public void ResetHUD()
         {
             _livesValue = 3; //Reset lives 

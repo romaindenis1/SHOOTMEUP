@@ -7,15 +7,16 @@ namespace LotOfWindowsSpaceInvader
 {
     public class Obstacle : Form
     {
-        private PictureBox _obstacleImage;
-        private Timer _moveTimer;
-        private int _moveSpeed = 5; // vitesse oublie de change aussi
-        private bool _movingRight;
+        private PictureBox _obstacleImage;                                              //l'image de l'obstacle
+        private Timer _moveTimer;                                                       //le timer pour que l'obstacle bouge
+        private int _moveSpeed = 5;                                                     //vitesse de l'obstacle
+        private bool _movingRight;                                                      //si l'obstacle bouge a droite ou pas
 
         public Obstacle(string imagePath, bool movingRight)
         {
             InitializeComponent();
 
+            //setup
             this.FormBorderStyle = FormBorderStyle.None;
             this.StartPosition = FormStartPosition.Manual;
             this.BackColor = Color.Black;
@@ -28,22 +29,26 @@ namespace LotOfWindowsSpaceInvader
             this.Controls.Add(_obstacleImage);
 
             this.Size = _obstacleImage.Image.Size;
+
             this.MinimumSize = _obstacleImage.Size;
             this.MaximumSize = _obstacleImage.Size;
 
             _movingRight = movingRight;
             SetInitialPosition();
 
+            //allume le timer
             _moveTimer = new Timer
             {
-                Interval = 50 // oublie pas de changer ca
+                Interval = 5
             };
             _moveTimer.Tick += MoveObstacle;
             _moveTimer.Start();
 
             this.Show();
         }
-
+        /// <summary>
+        /// Met la position de base de l'obstacle
+        /// </summary>
         private void SetInitialPosition()
         {
             if (_movingRight)
@@ -56,6 +61,11 @@ namespace LotOfWindowsSpaceInvader
             }
         }
 
+        /// <summary>
+        /// Bouger l'obstacle
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void MoveObstacle(object sender, EventArgs e)
         {
             if (_movingRight)
@@ -75,7 +85,9 @@ namespace LotOfWindowsSpaceInvader
                 }
             }
         }
-
+        /// <summary>
+        /// Encore du setup
+        /// </summary>
         private void InitializeComponent()
         {
             this.SuspendLayout();
@@ -88,12 +100,20 @@ namespace LotOfWindowsSpaceInvader
             this.ResumeLayout(false);
 
         }
-
+        /// <summary>
+        /// Bool pour savoir si l'obstacle touche une balle
+        /// </summary>
+        /// <param name="bullet">La balle du joueur</param>
+        /// <returns></returns>
         public bool BlocksBullet(Bullet bullet)
         {
             return this.Bounds.IntersectsWith(bullet.Bounds);
         }
-
+        /// <summary>
+        /// Bool pour savoir si l'obstacle touche une balle enemi
+        /// </summary>
+        /// <param name="evilBullet">La balles des enemis</param>
+        /// <returns></returns>
         public bool BlocksEvilBullet(EvilBullet evilBullet)
         {
             return this.Bounds.IntersectsWith(evilBullet.Bounds);

@@ -35,7 +35,9 @@ namespace LotOfWindowsSpaceInvader
             this._invaderImage.BackColor = System.Drawing.Color.Transparent;
         }
 
-        //methode pour bouger le invader
+        /// <summary>
+        /// Faire bouge invader
+        /// </summary>
         public void Move()
         {
             
@@ -58,7 +60,9 @@ namespace LotOfWindowsSpaceInvader
                 }
             }
         }
-
+        /// <summary>
+        /// setup
+        /// </summary>
         private void InitializeComponent()
         {
             this.SuspendLayout();

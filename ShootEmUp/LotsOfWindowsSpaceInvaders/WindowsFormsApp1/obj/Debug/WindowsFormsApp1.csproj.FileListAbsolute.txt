@@ -53,3 +53,4 @@ C:\Users\r\Documents\GitHub\SHOOTMEUP\ShootEmUp\LotsOfWindowsSpaceInvaders\Windo
 C:\Users\r\Documents\GitHub\SHOOTMEUP\ShootEmUp\LotsOfWindowsSpaceInvaders\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.pdb
 C:\Users\r\Documents\GitHub\SHOOTMEUP\ShootEmUp\LotsOfWindowsSpaceInvaders\WindowsFormsApp1\obj\Debug\LotOfWindowsSpaceInvader.GameOverWindow.resources
 C:\Users\ps04egl\Documents\GitHub\SHOOTMEUP\ShootEmUp\LotsOfWindowsSpaceInvaders\WindowsFormsApp1\obj\Debug\LotOfWindowsSpaceInvader.GameOverWindow.resources
+C:\Users\ps04egl\Documents\GitHub\SHOOTMEUP\ShootEmUp\LotsOfWindowsSpaceInvaders\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.SuggestedBindingRedirects.cache
