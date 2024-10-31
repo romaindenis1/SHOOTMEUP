@@ -6,7 +6,7 @@ namespace LotOfWindowsSpaceInvader
 {
     public class GameOverWindow : Form
     {
-        private Label _messageLabel;
+        private Label _messageLabel;                                        //le label avec le message
 
         public GameOverWindow(string message)
         {
@@ -17,15 +17,26 @@ namespace LotOfWindowsSpaceInvader
         //assets de les fenetre
         private void InitializeComponent()
         {
-            this.StartPosition = FormStartPosition.CenterScreen; 
-            this.Size = new Size(300, 150); 
-            this.FormBorderStyle = FormBorderStyle.FixedDialog; 
+            this.SuspendLayout();
+            
+            //setup GameOverWindow
+            
+            this.BackColor = System.Drawing.Color.Black;
+            this.ClientSize = new System.Drawing.Size(284, 111);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
-            this.MinimizeBox = false; 
-            this.BackColor = Color.Black; 
+            this.MinimizeBox = false;
+            this.Name = "GameOverWindow";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Load += new System.EventHandler(this.GameOverWindow_Load);
+            this.ResumeLayout(false);
+
         }
 
-        //setup le ui
+        /// <summary>
+        /// Setup le UI
+        /// </summary>
+        /// <param name="message"></param>
         private void SetupUI(string message)
         {
             _messageLabel = new Label
@@ -38,6 +49,11 @@ namespace LotOfWindowsSpaceInvader
             };
 
             this.Controls.Add(_messageLabel); //met le message 
+        }
+
+        private void GameOverWindow_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
