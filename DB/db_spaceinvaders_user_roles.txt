@@ -1,0 +1,23 @@
+--Cree user admin
+CREATE USER 'admin'@'localhost' IDENTIFIED BY 'admin_pass';
+
+--Donne tout les droits a user admin
+GRANT ALL PRIVILEGES ON db_spaceinvaders.* TO 'admin'@'localhost';
+GRANT GRANT OPTION ON *.* TO 'admin'@'localhost';
+
+--Cree user game manager
+CREATE USER 'game_manager'@'localhost' IDENTIFIED BY 'gm_pass';
+
+--Donne les droit a game manager
+GRANT SELECT, INSERT, UPDATE ON db_spaceinvaders.player TO 'game_manager'@'localhost';
+GRANT SELECT, INSERT, UPDATE ON db_spaceinvaders.score TO 'game_manager'@'localhost';
+GRANT SELECT ON db_spaceinvaders.level TO 'game_manager'@'localhost';
+GRANT SELECT ON db_spaceinvaders.enemy TO 'game_manager'@'localhost';
+GRANT SELECT ON db_spaceinvaders.obstacle TO 'game_manager'@'localhost';
+
+--Cree user joueur
+CREATE USER 'game_user'@'localhost' IDENTIFIED BY 'gu_pass';
+
+
+--Refresh les droits
+FLUSH PRIVILEGES;

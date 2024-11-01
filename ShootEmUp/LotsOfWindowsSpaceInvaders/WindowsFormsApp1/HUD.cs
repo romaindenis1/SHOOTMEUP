@@ -7,18 +7,21 @@ namespace LotOfWindowsSpaceInvader
     public class HUD : Form
     {
         private Label _hudLabel;                                    // label qui display
-        public int _scoreValue;                                     // la valeur du score
-        public int _livesValue { get; private set; }                // valeurs des vies
         private Timer _textMoveTimer;                               // Timer pour bouger le texte
+
+        public int _scoreValue;                                     // la valeur du score
         private int _textMoveSpeed = 2;                             // vitesse
+        public int _livesValue { get; private set; }                // valeurs des vies
+       
         private bool _movingRight = true;                           //si ca bouge vers la droite au debut ou pas
 
         public HUD()
         {
+            //bla bla bla
             this.FormBorderStyle = FormBorderStyle.None;
 
             this.BackColor = Color.Black;
-            this.Size = new Size(225, 35); // taille
+            this.Size = new Size(225, 35);
 
             // couleurs ect
             _hudLabel = new Label();
@@ -27,21 +30,17 @@ namespace LotOfWindowsSpaceInvader
             _hudLabel.Dock = DockStyle.Fill; 
             _hudLabel.TextAlign = ContentAlignment.MiddleCenter;
             
-
-            // Add label to the user control
             this.Controls.Add(_hudLabel);
 
             _scoreValue = 0;                                            //score de base
-            _livesValue = 3;                                            //vie de base
-            UpdateHUDDisplay();
+            _livesValue = 10;                                           //vie de base
+            UpdateHUDDisplay();                                         //met a jour le hud
 
-            //timer
+            //setup timer qui bouge le texte
             _textMoveTimer = new Timer();
             _textMoveTimer.Interval = 20; 
             _textMoveTimer.Tick += MoveWindow; 
             _textMoveTimer.Start();
-            
-
         }
 
         /// <summary>
@@ -64,6 +63,7 @@ namespace LotOfWindowsSpaceInvader
                 UpdateHUDDisplay();
             }
         }
+
         /// <summary>
         /// Donne le nombre de vies
         /// </summary>
@@ -72,10 +72,11 @@ namespace LotOfWindowsSpaceInvader
         {
             return _livesValue;
         }
+
         /// <summary>
         /// Update la hud
         /// </summary>
-        private void UpdateHUDDisplay()
+        public void UpdateHUDDisplay()
         {
             _hudLabel.Text = $"Score: {_scoreValue}   Lives: {_livesValue}"; //display
         }

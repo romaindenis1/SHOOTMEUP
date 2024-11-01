@@ -67,6 +67,12 @@
     <Compile Include="Invader.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="LevelSelect.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LevelSettings.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="MenuForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -89,6 +95,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Invader.resx">
       <DependentUpon>Invader.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LevelSelect.resx">
+      <DependentUpon>LevelSelect.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LevelSettings.resx">
+      <DependentUpon>LevelSettings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuForm.resx">
+      <DependentUpon>MenuForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Obstacle.resx">
       <DependentUpon>Obstacle.cs</DependentUpon>
@@ -122,9 +137,14 @@
     <Content Include="bullet.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="enemy1.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="enemy.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="enemy2.png" />
+    <Content Include="enemy3.png" />
     <Content Include="evilbullet.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

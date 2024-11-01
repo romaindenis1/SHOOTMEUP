@@ -1,22 +1,21 @@
-﻿using System.Drawing;
+﻿using System;
+using System.Drawing;
 using System.Windows.Forms;
-using System;
 using WindowsFormsApp1;
 
 namespace LotOfWindowsSpaceInvader
 {
     public class Obstacle : Form
     {
-        private PictureBox _obstacleImage;                                              //l'image de l'obstacle
-        private Timer _moveTimer;                                                       //le timer pour que l'obstacle bouge
-        private int _moveSpeed = 5;                                                     //vitesse de l'obstacle
-        private bool _movingRight;                                                      //si l'obstacle bouge a droite ou pas
+        private PictureBox _obstacleImage;  // Image de l'obstacle
 
-        public Obstacle(string imagePath, bool movingRight)
+        // Event to notify Form1 when the obstacle is destroyed
+        public event EventHandler ObstacleDestroyed;
+
+        public Obstacle(string imagePath, int positionIndex)
         {
             InitializeComponent();
 
-            //setup
             this.FormBorderStyle = FormBorderStyle.None;
             this.StartPosition = FormStartPosition.Manual;
             this.BackColor = Color.Black;
@@ -28,65 +27,73 @@ namespace LotOfWindowsSpaceInvader
             };
             this.Controls.Add(_obstacleImage);
 
+            // Set the obstacle's size to match the image size
             this.Size = _obstacleImage.Image.Size;
-
             this.MinimumSize = _obstacleImage.Size;
             this.MaximumSize = _obstacleImage.Size;
 
-            _movingRight = movingRight;
-            SetInitialPosition();
-
-            //allume le timer
-            _moveTimer = new Timer
-            {
-                Interval = 5
-            };
-            _moveTimer.Tick += MoveObstacle;
-            _moveTimer.Start();
+            // Place obstacle at initial position across the screen based on positionIndex
+            SetInitialPosition(positionIndex);
 
             this.Show();
         }
+
         /// <summary>
-        /// Met la position de base de l'obstacle
+        /// Sets the initial position of the obstacle based on positionIndex.
         /// </summary>
-        private void SetInitialPosition()
+        /// <param name="positionIndex">Position index to space obstacles across the screen.</param>
+        private void SetInitialPosition(int positionIndex)
         {
-            if (_movingRight)
-            {
-                this.Location = new Point(-this.Width, new Random().Next(50, Screen.PrimaryScreen.WorkingArea.Height - this.Height - 50));
-            }
-            else
-            {
-                this.Location = new Point(Screen.PrimaryScreen.WorkingArea.Width, new Random().Next(50, Screen.PrimaryScreen.WorkingArea.Height - this.Height - 50));
-            }
+            int spacing = Screen.PrimaryScreen.WorkingArea.Width / 4;
+            int xPosition = spacing * (positionIndex + 1);
+            int yPosition = 800;  // Sets obstacle higher on the screen
+
+            this.Location = new Point(xPosition, yPosition);
         }
 
         /// <summary>
-        /// Bouger l'obstacle
+        /// Checks if the obstacle blocks a player's bullet. If hit, removes the obstacle.
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void MoveObstacle(object sender, EventArgs e)
+        /// <param name="bullet">The player's bullet.</param>
+        /// <returns>True if hit; otherwise, false.</returns>
+        public bool BlocksBullet(Bullet bullet)
         {
-            if (_movingRight)
+            if (this.Bounds.IntersectsWith(bullet.Bounds))
             {
-                this.Left += _moveSpeed;
-                if (this.Left > Screen.PrimaryScreen.WorkingArea.Width)
-                {
-                    this.Close();
-                }
+                RemoveObstacle();
+                return true;
             }
-            else
-            {
-                this.Left -= _moveSpeed;
-                if (this.Right < 0)
-                {
-                    this.Close();
-                }
-            }
+            return false;
         }
+
         /// <summary>
-        /// Encore du setup
+        /// Checks if the obstacle blocks an enemy's bullet. If hit, removes the obstacle.
+        /// </summary>
+        /// <param name="evilBullet">The enemy's bullet.</param>
+        /// <returns>True if hit; otherwise, false.</returns>
+        public bool BlocksEvilBullet(EvilBullet evilBullet)
+        {
+            if (this.Bounds.IntersectsWith(evilBullet.Bounds))
+            {
+                RemoveObstacle();
+                return true;
+            }
+            return false;
+        }
+
+        /// <summary>
+        /// Removes the obstacle from the game, clears resources, and notifies Form1.
+        /// </summary>
+        private void RemoveObstacle()
+        {
+            ObstacleDestroyed?.Invoke(this, EventArgs.Empty);  // Notify Form1 to remove the obstacle
+            this.Controls.Clear();  // Clear controls like PictureBox
+            this.Hide();            // Hide obstacle from the screen
+            this.Dispose();         // Dispose to release resources
+        }
+
+        /// <summary>
+        /// Sets up initial component configurations.
         /// </summary>
         private void InitializeComponent()
         {
@@ -99,24 +106,6 @@ namespace LotOfWindowsSpaceInvader
             this.Load += new System.EventHandler(this.Obstacle_Load);
             this.ResumeLayout(false);
 
-        }
-        /// <summary>
-        /// Bool pour savoir si l'obstacle touche une balle
-        /// </summary>
-        /// <param name="bullet">La balle du joueur</param>
-        /// <returns></returns>
-        public bool BlocksBullet(Bullet bullet)
-        {
-            return this.Bounds.IntersectsWith(bullet.Bounds);
-        }
-        /// <summary>
-        /// Bool pour savoir si l'obstacle touche une balle enemi
-        /// </summary>
-        /// <param name="evilBullet">La balles des enemis</param>
-        /// <returns></returns>
-        public bool BlocksEvilBullet(EvilBullet evilBullet)
-        {
-            return this.Bounds.IntersectsWith(evilBullet.Bounds);
         }
 
         private void Obstacle_Load(object sender, EventArgs e)

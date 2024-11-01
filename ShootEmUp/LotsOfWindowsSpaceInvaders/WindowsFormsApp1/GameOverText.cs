@@ -11,7 +11,7 @@ namespace LotOfWindowsSpaceInvader
         public GameOverWindow(string message)
         {
             InitializeComponent();
-            SetupUI(message);
+            SetupUI(message);                                              //met le message
         }
 
         //assets de les fenetre
@@ -20,7 +20,6 @@ namespace LotOfWindowsSpaceInvader
             this.SuspendLayout();
             
             //setup GameOverWindow
-            
             this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(284, 111);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
@@ -36,7 +35,7 @@ namespace LotOfWindowsSpaceInvader
         /// <summary>
         /// Setup le UI
         /// </summary>
-        /// <param name="message"></param>
+        /// <param name="message">Le message de fin du jeu</param>
         private void SetupUI(string message)
         {
             _messageLabel = new Label
@@ -47,7 +46,6 @@ namespace LotOfWindowsSpaceInvader
                 Font = new Font("Arial", 16, FontStyle.Bold), 
                 ForeColor = Color.White
             };
-
             this.Controls.Add(_messageLabel); //met le message 
         }
 

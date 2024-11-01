@@ -2,7 +2,7 @@
 using System;
 using System.Windows.Forms;
 
-namespace YourNamespace
+namespace LotOfWindowsSpaceInvader
 {
     class Program
     {

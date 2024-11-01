@@ -1,0 +1,40 @@
+Spécificités DB
+MCD
+MLD
+Script SQL de création de la base de données
+un jeu de données spécifique à votre jeu contenant:
+au moins deux niveaux de jeu
+deux joueurs correspondants à vos personnas UX
+un joueur devra être présent par niveau
+les informations concernant les ennemis et les joueurs devront correspondre exactement à ce qui sera implémenté dans votre jeu(ex: si vous aurez 10 ennemis, nous devons retrouvez ces 10 ennemis dans votre jeu de données. Idem pour les obstacles, etc.)
+
+Gestion des utilisateurs
+Différents utilisateurs vont devoir interagir avec la base de données. Pour ce faire, ces utilisateurs ont des missions différentes : 
+ Administrateur du jeu : 
+Peut créer, lire, mettre à jour et supprimer (CRUD) n'importe quelle table. 
+Gérer les utilisateurs et leurs privilèges. 
+Joueur : 
+Aucun accès direct à la base de données. Ce rôle est essentiellement géré par l’application qui contrôle l’accès aux données pour chaque joueur. L’application assure que les joueurs ne peuvent pas accéder directement aux données critiques, mais seulement aux informations qui les concernent.
+ Gestionnaire du jeu : 
+
+Cet utilisateur serait utilisé par l'application (le jeu) pour gérer les mises à jour en temps réel des données pendant une session de jeu.
+Lecture/écriture pour modifier les scores, le nombre de vies, et le niveau actuel du joueur.
+Insertion d'un nouveau score quand un joueur atteint un nouveau record.
+Lecture pour récupérer les informations sur le niveau (comme les ennemis et obstacles).
+Lecture pour récupérer les caractéristiques et positions des ennemis et obstacles.
+             Travail demandé : Vous devez expliquer, comment mettre en place ces différents « types d’utilisateurs » afin de      
+              rendre la gestion des utilisateurs la plus simple possible. Pour cela, vous devez définir un ensemble de requêtes       
+              SQL. Vous devez créer au moins un utilisateur par « type d’utilisateurs ». 
+ 
+
+Création des index
+En étudiant le dump MySQL de votre DB vous constaterez que vous ne trouvez pas le mot clé INDEX. 
+1. Pourtant certains index existent déjà. Pourquoi ? 
+2. Quels sont les avantages et les inconvénients des index ? 
+3. Sur quel champ (de quelle table. Pensez à l'utilisation de votre DB depuis C# par exemple), cela pourrait être pertinent d’ajouter un index ? Justifier votre réponse. 
+ 
+Backup / Restore
+Nous souhaitons réaliser une sauvegarde (Backup) de votre base de données . Ensuite, nous souhaitons nous assurer que cette sauvegarde est correcte en la rechargeant dans MySQL (opération de restauration). Donner la commande permettant de faire : 
+- Un backup de votre base de données
+- Un restore de votre base de données En expliquant en détail chaque commande utilisée. 
+ 
