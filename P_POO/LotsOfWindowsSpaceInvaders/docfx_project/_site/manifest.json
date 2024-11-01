@@ -1,0 +1,145 @@
+{
+  "source_base_path": "C:/Users/ps04egl/Documents/GitHub/SHOOTMEUP/P_POO/LotsOfWindowsSpaceInvaders/docfx_project",
+  "xrefmap": "xrefmap.yml",
+  "files": [
+    {
+      "type": "Resource",
+      "output": {
+        "resource": {
+          "relative_path": "index.json"
+        }
+      }
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LotOfWindowsSpaceInvader.Bullet.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LotOfWindowsSpaceInvader.Bullet.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LotOfWindowsSpaceInvader.Form1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LotOfWindowsSpaceInvader.Form1.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LotOfWindowsSpaceInvader.GameOverWindow.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LotOfWindowsSpaceInvader.GameOverWindow.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LotOfWindowsSpaceInvader.HUD.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LotOfWindowsSpaceInvader.HUD.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LotOfWindowsSpaceInvader.Invader.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LotOfWindowsSpaceInvader.Invader.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LotOfWindowsSpaceInvader.LevelSelect.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LotOfWindowsSpaceInvader.LevelSelect.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LotOfWindowsSpaceInvader.LevelSettings.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LotOfWindowsSpaceInvader.LevelSettings.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LotOfWindowsSpaceInvader.Obstacle.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LotOfWindowsSpaceInvader.Obstacle.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LotOfWindowsSpaceInvader.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LotOfWindowsSpaceInvader.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "api/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/toc.html"
+        },
+        ".json": {
+          "relative_path": "api/toc.json"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "index.md",
+      "output": {
+        ".html": {
+          "relative_path": "index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "toc.html"
+        },
+        ".json": {
+          "relative_path": "toc.json"
+        }
+      },
+      "version": ""
+    }
+  ],
+  "groups": [
+    {
+      "xrefmap": "xrefmap.yml"
+    }
+  ]
+}

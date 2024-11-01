@@ -1,0 +1,354 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\ps04egl\\Documents\\GitHub\\SHOOTMEUP\\P_POO\\LotsOfWindowsSpaceInvaders\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{B0693F1F-7198-489F-8855-CAE18BBBEFBE}|WindowsFormsApp1\\ShootMeUp.csproj|C:\\Users\\ps04egl\\Documents\\GitHub\\SHOOTMEUP\\P_POO\\LotsOfWindowsSpaceInvaders\\WindowsFormsApp1\\EvilBullet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B0693F1F-7198-489F-8855-CAE18BBBEFBE}|WindowsFormsApp1\\ShootMeUp.csproj|solutionrelative:WindowsFormsApp1\\EvilBullet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B0693F1F-7198-489F-8855-CAE18BBBEFBE}|WindowsFormsApp1\\ShootMeUp.csproj|C:\\Users\\ps04egl\\Documents\\GitHub\\SHOOTMEUP\\P_POO\\LotsOfWindowsSpaceInvaders\\windowsformsapp1\\menuform.resx||{FF4D6ACA-9352-4A5F-821E-F4D6EBDCAB11}",
+      "RelativeMoniker": "D:0:0:{B0693F1F-7198-489F-8855-CAE18BBBEFBE}|WindowsFormsApp1\\ShootMeUp.csproj|solutionrelative:windowsformsapp1\\menuform.resx||{FF4D6ACA-9352-4A5F-821E-F4D6EBDCAB11}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B0693F1F-7198-489F-8855-CAE18BBBEFBE}|WindowsFormsApp1\\ShootMeUp.csproj|C:\\Users\\ps04egl\\Documents\\GitHub\\SHOOTMEUP\\P_POO\\LotsOfWindowsSpaceInvaders\\windowsformsapp1\\invader.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{B0693F1F-7198-489F-8855-CAE18BBBEFBE}|WindowsFormsApp1\\ShootMeUp.csproj|solutionrelative:windowsformsapp1\\invader.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B0693F1F-7198-489F-8855-CAE18BBBEFBE}|WindowsFormsApp1\\ShootMeUp.csproj|C:\\Users\\ps04egl\\Documents\\GitHub\\SHOOTMEUP\\P_POO\\LotsOfWindowsSpaceInvaders\\WindowsFormsApp1\\Bullet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B0693F1F-7198-489F-8855-CAE18BBBEFBE}|WindowsFormsApp1\\ShootMeUp.csproj|solutionrelative:WindowsFormsApp1\\Bullet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B0693F1F-7198-489F-8855-CAE18BBBEFBE}|WindowsFormsApp1\\ShootMeUp.csproj|C:\\Users\\ps04egl\\Documents\\GitHub\\SHOOTMEUP\\P_POO\\LotsOfWindowsSpaceInvaders\\WindowsFormsApp1\\Obstacle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B0693F1F-7198-489F-8855-CAE18BBBEFBE}|WindowsFormsApp1\\ShootMeUp.csproj|solutionrelative:WindowsFormsApp1\\Obstacle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B0693F1F-7198-489F-8855-CAE18BBBEFBE}|WindowsFormsApp1\\ShootMeUp.csproj|C:\\Users\\ps04egl\\Documents\\GitHub\\SHOOTMEUP\\P_POO\\LotsOfWindowsSpaceInvaders\\WindowsFormsApp1\\Program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B0693F1F-7198-489F-8855-CAE18BBBEFBE}|WindowsFormsApp1\\ShootMeUp.csproj|solutionrelative:WindowsFormsApp1\\Program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B0693F1F-7198-489F-8855-CAE18BBBEFBE}|WindowsFormsApp1\\ShootMeUp.csproj|C:\\Users\\ps04egl\\Documents\\GitHub\\SHOOTMEUP\\P_POO\\LotsOfWindowsSpaceInvaders\\WindowsFormsApp1\\MenuForm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B0693F1F-7198-489F-8855-CAE18BBBEFBE}|WindowsFormsApp1\\ShootMeUp.csproj|solutionrelative:WindowsFormsApp1\\MenuForm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B0693F1F-7198-489F-8855-CAE18BBBEFBE}|WindowsFormsApp1\\ShootMeUp.csproj|c:\\users\\ps04egl\\documents\\github\\shootmeup\\p_poo\\lotsofwindowsspaceinvaders\\windowsformsapp1\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B0693F1F-7198-489F-8855-CAE18BBBEFBE}|WindowsFormsApp1\\ShootMeUp.csproj|solutionrelative:windowsformsapp1\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B0693F1F-7198-489F-8855-CAE18BBBEFBE}|WindowsFormsApp1\\ShootMeUp.csproj|C:\\Users\\ps04egl\\Documents\\GitHub\\SHOOTMEUP\\P_POO\\LotsOfWindowsSpaceInvaders\\WindowsFormsApp1\\GameOverText.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B0693F1F-7198-489F-8855-CAE18BBBEFBE}|WindowsFormsApp1\\ShootMeUp.csproj|solutionrelative:WindowsFormsApp1\\GameOverText.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B0693F1F-7198-489F-8855-CAE18BBBEFBE}|WindowsFormsApp1\\ShootMeUp.csproj|C:\\Users\\ps04egl\\Documents\\GitHub\\SHOOTMEUP\\P_POO\\LotsOfWindowsSpaceInvaders\\WindowsFormsApp1\\HUD.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B0693F1F-7198-489F-8855-CAE18BBBEFBE}|WindowsFormsApp1\\ShootMeUp.csproj|solutionrelative:WindowsFormsApp1\\HUD.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B0693F1F-7198-489F-8855-CAE18BBBEFBE}|WindowsFormsApp1\\ShootMeUp.csproj|C:\\Users\\ps04egl\\Documents\\GitHub\\SHOOTMEUP\\P_POO\\LotsOfWindowsSpaceInvaders\\WindowsFormsApp1\\LevelSettings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B0693F1F-7198-489F-8855-CAE18BBBEFBE}|WindowsFormsApp1\\ShootMeUp.csproj|solutionrelative:WindowsFormsApp1\\LevelSettings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B0693F1F-7198-489F-8855-CAE18BBBEFBE}|WindowsFormsApp1\\ShootMeUp.csproj|C:\\Users\\ps04egl\\Documents\\GitHub\\SHOOTMEUP\\P_POO\\LotsOfWindowsSpaceInvaders\\WindowsFormsApp1\\LevelSelect.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B0693F1F-7198-489F-8855-CAE18BBBEFBE}|WindowsFormsApp1\\ShootMeUp.csproj|solutionrelative:WindowsFormsApp1\\LevelSelect.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B0693F1F-7198-489F-8855-CAE18BBBEFBE}|WindowsFormsApp1\\ShootMeUp.csproj|C:\\Users\\ps04egl\\Documents\\GitHub\\SHOOTMEUP\\P_POO\\LotsOfWindowsSpaceInvaders\\WindowsFormsApp1\\Invader.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B0693F1F-7198-489F-8855-CAE18BBBEFBE}|WindowsFormsApp1\\ShootMeUp.csproj|solutionrelative:WindowsFormsApp1\\Invader.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{08287A04-8345-48FD-ADB7-C41B5D55FCAF}|ShootMeUpTests\\ShootMeUpTests.csproj|c:\\users\\ps04egl\\documents\\github\\shootmeup\\p_poo\\lotsofwindowsspaceinvaders\\shootmeuptests\\bullettests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{08287A04-8345-48FD-ADB7-C41B5D55FCAF}|ShootMeUpTests\\ShootMeUpTests.csproj|solutionrelative:shootmeuptests\\bullettests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B0693F1F-7198-489F-8855-CAE18BBBEFBE}|WindowsFormsApp1\\ShootMeUp.csproj|C:\\Users\\ps04egl\\Documents\\GitHub\\SHOOTMEUP\\P_POO\\LotsOfWindowsSpaceInvaders\\windowsformsapp1\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{B0693F1F-7198-489F-8855-CAE18BBBEFBE}|WindowsFormsApp1\\ShootMeUp.csproj|solutionrelative:windowsformsapp1\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B0693F1F-7198-489F-8855-CAE18BBBEFBE}|WindowsFormsApp1\\ShootMeUp.csproj|C:\\Users\\ps04egl\\Documents\\GitHub\\SHOOTMEUP\\P_POO\\LotsOfWindowsSpaceInvaders\\windowsformsapp1\\bullet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{B0693F1F-7198-489F-8855-CAE18BBBEFBE}|WindowsFormsApp1\\ShootMeUp.csproj|solutionrelative:windowsformsapp1\\bullet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B0693F1F-7198-489F-8855-CAE18BBBEFBE}|WindowsFormsApp1\\ShootMeUp.csproj|C:\\Users\\ps04egl\\Documents\\GitHub\\SHOOTMEUP\\P_POO\\LotsOfWindowsSpaceInvaders\\windowsformsapp1\\menuform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{B0693F1F-7198-489F-8855-CAE18BBBEFBE}|WindowsFormsApp1\\ShootMeUp.csproj|solutionrelative:windowsformsapp1\\menuform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B0693F1F-7198-489F-8855-CAE18BBBEFBE}|WindowsFormsApp1\\ShootMeUp.csproj|C:\\Users\\ps04egl\\Documents\\GitHub\\SHOOTMEUP\\P_POO\\LotsOfWindowsSpaceInvaders\\windowsformsapp1\\obstacle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{B0693F1F-7198-489F-8855-CAE18BBBEFBE}|WindowsFormsApp1\\ShootMeUp.csproj|solutionrelative:windowsformsapp1\\obstacle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B0693F1F-7198-489F-8855-CAE18BBBEFBE}|WindowsFormsApp1\\ShootMeUp.csproj|C:\\Users\\ps04egl\\Documents\\GitHub\\SHOOTMEUP\\P_POO\\LotsOfWindowsSpaceInvaders\\windowsformsapp1\\evilbullet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{B0693F1F-7198-489F-8855-CAE18BBBEFBE}|WindowsFormsApp1\\ShootMeUp.csproj|solutionrelative:windowsformsapp1\\evilbullet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B0693F1F-7198-489F-8855-CAE18BBBEFBE}|WindowsFormsApp1\\ShootMeUp.csproj|C:\\Users\\ps04egl\\Documents\\GitHub\\SHOOTMEUP\\P_POO\\LotsOfWindowsSpaceInvaders\\WindowsFormsApp1\\Form1.Designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B0693F1F-7198-489F-8855-CAE18BBBEFBE}|WindowsFormsApp1\\ShootMeUp.csproj|solutionrelative:WindowsFormsApp1\\Form1.Designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 17,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "Invader.cs",
+              "DocumentMoniker": "C:\\Users\\ps04egl\\Documents\\GitHub\\SHOOTMEUP\\P_POO\\LotsOfWindowsSpaceInvaders\\WindowsFormsApp1\\Invader.cs",
+              "RelativeDocumentMoniker": "WindowsFormsApp1\\Invader.cs",
+              "ToolTip": "C:\\Users\\ps04egl\\Documents\\GitHub\\SHOOTMEUP\\P_POO\\LotsOfWindowsSpaceInvaders\\WindowsFormsApp1\\Invader.cs",
+              "RelativeToolTip": "WindowsFormsApp1\\Invader.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAEAAAAbAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-27T14:30:33.358Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "BulletTests.cs",
+              "DocumentMoniker": "C:\\Users\\ps04egl\\Documents\\GitHub\\SHOOTMEUP\\P_POO\\LotsOfWindowsSpaceInvaders\\ShootMeUpTests\\BulletTests.cs",
+              "RelativeDocumentMoniker": "ShootMeUpTests\\BulletTests.cs",
+              "ToolTip": "C:\\Users\\ps04egl\\Documents\\GitHub\\SHOOTMEUP\\P_POO\\LotsOfWindowsSpaceInvaders\\ShootMeUpTests\\BulletTests.cs",
+              "RelativeToolTip": "ShootMeUpTests\\BulletTests.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-01T12:49:11.029Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "Form1.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\ps04egl\\Documents\\GitHub\\SHOOTMEUP\\P_POO\\LotsOfWindowsSpaceInvaders\\WindowsFormsApp1\\Form1.cs",
+              "RelativeDocumentMoniker": "WindowsFormsApp1\\Form1.cs",
+              "ToolTip": "C:\\Users\\ps04egl\\Documents\\GitHub\\SHOOTMEUP\\P_POO\\LotsOfWindowsSpaceInvaders\\WindowsFormsApp1\\Form1.cs [Design]",
+              "RelativeToolTip": "WindowsFormsApp1\\Form1.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-01T07:22:08.946Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "MenuForm.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\ps04egl\\Documents\\GitHub\\SHOOTMEUP\\P_POO\\LotsOfWindowsSpaceInvaders\\WindowsFormsApp1\\MenuForm.cs",
+              "RelativeDocumentMoniker": "WindowsFormsApp1\\MenuForm.cs",
+              "ToolTip": "C:\\Users\\ps04egl\\Documents\\GitHub\\SHOOTMEUP\\P_POO\\LotsOfWindowsSpaceInvaders\\WindowsFormsApp1\\MenuForm.cs [Design]",
+              "RelativeToolTip": "WindowsFormsApp1\\MenuForm.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-01T07:21:50.112Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "LevelSelect.cs",
+              "DocumentMoniker": "C:\\Users\\ps04egl\\Documents\\GitHub\\SHOOTMEUP\\P_POO\\LotsOfWindowsSpaceInvaders\\WindowsFormsApp1\\LevelSelect.cs",
+              "RelativeDocumentMoniker": "WindowsFormsApp1\\LevelSelect.cs",
+              "ToolTip": "C:\\Users\\ps04egl\\Documents\\GitHub\\SHOOTMEUP\\P_POO\\LotsOfWindowsSpaceInvaders\\WindowsFormsApp1\\LevelSelect.cs",
+              "RelativeToolTip": "WindowsFormsApp1\\LevelSelect.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAEAAAAdAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-31T17:54:58.724Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "LevelSettings.cs",
+              "DocumentMoniker": "C:\\Users\\ps04egl\\Documents\\GitHub\\SHOOTMEUP\\P_POO\\LotsOfWindowsSpaceInvaders\\WindowsFormsApp1\\LevelSettings.cs",
+              "RelativeDocumentMoniker": "WindowsFormsApp1\\LevelSettings.cs",
+              "ToolTip": "C:\\Users\\ps04egl\\Documents\\GitHub\\SHOOTMEUP\\P_POO\\LotsOfWindowsSpaceInvaders\\WindowsFormsApp1\\LevelSettings.cs",
+              "RelativeToolTip": "WindowsFormsApp1\\LevelSettings.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAEAAAAiAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-31T19:18:55.386Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "HUD.cs",
+              "DocumentMoniker": "C:\\Users\\ps04egl\\Documents\\GitHub\\SHOOTMEUP\\P_POO\\LotsOfWindowsSpaceInvaders\\WindowsFormsApp1\\HUD.cs",
+              "RelativeDocumentMoniker": "WindowsFormsApp1\\HUD.cs",
+              "ToolTip": "C:\\Users\\ps04egl\\Documents\\GitHub\\SHOOTMEUP\\P_POO\\LotsOfWindowsSpaceInvaders\\WindowsFormsApp1\\HUD.cs",
+              "RelativeToolTip": "WindowsFormsApp1\\HUD.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAEAAAAbAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-11T13:00:18.901Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "GameOverText.cs",
+              "DocumentMoniker": "C:\\Users\\ps04egl\\Documents\\GitHub\\SHOOTMEUP\\P_POO\\LotsOfWindowsSpaceInvaders\\WindowsFormsApp1\\GameOverText.cs",
+              "RelativeDocumentMoniker": "WindowsFormsApp1\\GameOverText.cs",
+              "ToolTip": "C:\\Users\\ps04egl\\Documents\\GitHub\\SHOOTMEUP\\P_POO\\LotsOfWindowsSpaceInvaders\\WindowsFormsApp1\\GameOverText.cs",
+              "RelativeToolTip": "WindowsFormsApp1\\GameOverText.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAEAAAAdAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-25T12:25:25.273Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Form1.cs",
+              "DocumentMoniker": "C:\\Users\\ps04egl\\Documents\\GitHub\\SHOOTMEUP\\P_POO\\LotsOfWindowsSpaceInvaders\\WindowsFormsApp1\\Form1.cs",
+              "RelativeDocumentMoniker": "WindowsFormsApp1\\Form1.cs",
+              "ToolTip": "C:\\Users\\ps04egl\\Documents\\GitHub\\SHOOTMEUP\\P_POO\\LotsOfWindowsSpaceInvaders\\WindowsFormsApp1\\Form1.cs",
+              "RelativeToolTip": "WindowsFormsApp1\\Form1.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAEAAAAmAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-27T14:22:27.922Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "MenuForm.cs",
+              "DocumentMoniker": "C:\\Users\\ps04egl\\Documents\\GitHub\\SHOOTMEUP\\P_POO\\LotsOfWindowsSpaceInvaders\\WindowsFormsApp1\\MenuForm.cs",
+              "RelativeDocumentMoniker": "WindowsFormsApp1\\MenuForm.cs",
+              "ToolTip": "C:\\Users\\ps04egl\\Documents\\GitHub\\SHOOTMEUP\\P_POO\\LotsOfWindowsSpaceInvaders\\WindowsFormsApp1\\MenuForm.cs",
+              "RelativeToolTip": "WindowsFormsApp1\\MenuForm.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-31T18:33:15.113Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\ps04egl\\Documents\\GitHub\\SHOOTMEUP\\P_POO\\LotsOfWindowsSpaceInvaders\\WindowsFormsApp1\\Program.cs",
+              "RelativeDocumentMoniker": "WindowsFormsApp1\\Program.cs",
+              "ToolTip": "C:\\Users\\ps04egl\\Documents\\GitHub\\SHOOTMEUP\\P_POO\\LotsOfWindowsSpaceInvaders\\WindowsFormsApp1\\Program.cs",
+              "RelativeToolTip": "WindowsFormsApp1\\Program.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAEAAAAbAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-27T13:40:35.439Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Obstacle.cs",
+              "DocumentMoniker": "C:\\Users\\ps04egl\\Documents\\GitHub\\SHOOTMEUP\\P_POO\\LotsOfWindowsSpaceInvaders\\WindowsFormsApp1\\Obstacle.cs",
+              "RelativeDocumentMoniker": "WindowsFormsApp1\\Obstacle.cs",
+              "ToolTip": "C:\\Users\\ps04egl\\Documents\\GitHub\\SHOOTMEUP\\P_POO\\LotsOfWindowsSpaceInvaders\\WindowsFormsApp1\\Obstacle.cs",
+              "RelativeToolTip": "WindowsFormsApp1\\Obstacle.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAEAAAAbAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-04T11:56:53.39Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "Obstacle.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\ps04egl\\Documents\\GitHub\\SHOOTMEUP\\P_POO\\LotsOfWindowsSpaceInvaders\\WindowsFormsApp1\\Obstacle.cs",
+              "RelativeDocumentMoniker": "WindowsFormsApp1\\Obstacle.cs",
+              "ToolTip": "C:\\Users\\ps04egl\\Documents\\GitHub\\SHOOTMEUP\\P_POO\\LotsOfWindowsSpaceInvaders\\WindowsFormsApp1\\Obstacle.cs [Design]",
+              "RelativeToolTip": "WindowsFormsApp1\\Obstacle.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-11T14:06:20.926Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Bullet.cs",
+              "DocumentMoniker": "C:\\Users\\ps04egl\\Documents\\GitHub\\SHOOTMEUP\\P_POO\\LotsOfWindowsSpaceInvaders\\WindowsFormsApp1\\Bullet.cs",
+              "RelativeDocumentMoniker": "WindowsFormsApp1\\Bullet.cs",
+              "ToolTip": "C:\\Users\\ps04egl\\Documents\\GitHub\\SHOOTMEUP\\P_POO\\LotsOfWindowsSpaceInvaders\\WindowsFormsApp1\\Bullet.cs",
+              "RelativeToolTip": "WindowsFormsApp1\\Bullet.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAEAAAAbAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-04T09:05:08.583Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "Bullet.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\ps04egl\\Documents\\GitHub\\SHOOTMEUP\\P_POO\\LotsOfWindowsSpaceInvaders\\WindowsFormsApp1\\Bullet.cs",
+              "RelativeDocumentMoniker": "WindowsFormsApp1\\Bullet.cs",
+              "ToolTip": "C:\\Users\\ps04egl\\Documents\\GitHub\\SHOOTMEUP\\P_POO\\LotsOfWindowsSpaceInvaders\\WindowsFormsApp1\\Bullet.cs [Design]",
+              "RelativeToolTip": "WindowsFormsApp1\\Bullet.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-04T09:05:06.933Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Invader.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\ps04egl\\Documents\\GitHub\\SHOOTMEUP\\P_POO\\LotsOfWindowsSpaceInvaders\\WindowsFormsApp1\\Invader.cs",
+              "RelativeDocumentMoniker": "WindowsFormsApp1\\Invader.cs",
+              "ToolTip": "C:\\Users\\ps04egl\\Documents\\GitHub\\SHOOTMEUP\\P_POO\\LotsOfWindowsSpaceInvaders\\WindowsFormsApp1\\Invader.cs [Design]",
+              "RelativeToolTip": "WindowsFormsApp1\\Invader.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-11T13:15:46.485Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "MenuForm.resx",
+              "DocumentMoniker": "C:\\Users\\ps04egl\\Documents\\GitHub\\SHOOTMEUP\\P_POO\\LotsOfWindowsSpaceInvaders\\WindowsFormsApp1\\MenuForm.resx",
+              "RelativeDocumentMoniker": "WindowsFormsApp1\\MenuForm.resx",
+              "ToolTip": "C:\\Users\\ps04egl\\Documents\\GitHub\\SHOOTMEUP\\P_POO\\LotsOfWindowsSpaceInvaders\\WindowsFormsApp1\\MenuForm.resx",
+              "RelativeToolTip": "WindowsFormsApp1\\MenuForm.resx",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001005|",
+              "WhenOpened": "2024-10-31T18:05:15.174Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "EvilBullet.cs",
+              "DocumentMoniker": "C:\\Users\\ps04egl\\Documents\\GitHub\\SHOOTMEUP\\P_POO\\LotsOfWindowsSpaceInvaders\\WindowsFormsApp1\\EvilBullet.cs",
+              "RelativeDocumentMoniker": "WindowsFormsApp1\\EvilBullet.cs",
+              "ToolTip": "C:\\Users\\ps04egl\\Documents\\GitHub\\SHOOTMEUP\\P_POO\\LotsOfWindowsSpaceInvaders\\WindowsFormsApp1\\EvilBullet.cs",
+              "RelativeToolTip": "WindowsFormsApp1\\EvilBullet.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAEAAAAZAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-11T11:20:04.168Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "EvilBullet.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\ps04egl\\Documents\\GitHub\\SHOOTMEUP\\P_POO\\LotsOfWindowsSpaceInvaders\\WindowsFormsApp1\\EvilBullet.cs",
+              "RelativeDocumentMoniker": "WindowsFormsApp1\\EvilBullet.cs",
+              "ToolTip": "C:\\Users\\ps04egl\\Documents\\GitHub\\SHOOTMEUP\\P_POO\\LotsOfWindowsSpaceInvaders\\WindowsFormsApp1\\EvilBullet.cs [Design]",
+              "RelativeToolTip": "WindowsFormsApp1\\EvilBullet.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-11T11:24:18.108Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "Form1.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\ps04egl\\Documents\\GitHub\\SHOOTMEUP\\P_POO\\LotsOfWindowsSpaceInvaders\\WindowsFormsApp1\\Form1.Designer.cs",
+              "RelativeDocumentMoniker": "WindowsFormsApp1\\Form1.Designer.cs",
+              "ToolTip": "C:\\Users\\ps04egl\\Documents\\GitHub\\SHOOTMEUP\\P_POO\\LotsOfWindowsSpaceInvaders\\WindowsFormsApp1\\Form1.Designer.cs",
+              "RelativeToolTip": "WindowsFormsApp1\\Form1.Designer.cs",
+              "ViewState": "AQIAABEAAAAAAAAAAABRwDQAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-27T13:38:37.039Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
