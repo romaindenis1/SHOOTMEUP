@@ -131,14 +131,14 @@ namespace LotOfWindowsSpaceInvader
         protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
         {
             //aller a gauche
-            if (keyData == Keys.A)
+            if (keyData == Keys.A || keyData == Keys.Left)
             {
                 this.Left = Math.Max(0, this.Left - _moveSpeed);
                 return true;
             }
 
             //aller a droite
-            else if (keyData == Keys.D)
+            else if (keyData == Keys.D || keyData == Keys.Right)
             {
                 this.Left = Math.Min(Screen.PrimaryScreen.WorkingArea.Width - this.Width, this.Left + _moveSpeed);
                 return true;
@@ -149,6 +149,13 @@ namespace LotOfWindowsSpaceInvader
             {
                 ShootBullet();
                 _hasShot = true;
+            }
+			
+			//reset le jeu 
+			if (keyData == Keys.Escape)
+            {
+                ReturnToMainMenu();
+                return true;
             }
             return base.ProcessCmdKey(ref msg, keyData);
         }
