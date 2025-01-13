@@ -1,19 +1,23 @@
+-- Créer les rôles
 CREATE ROLE 'admin_role';
 CREATE ROLE 'gestionnaire_role';
 
+-- Définir les privilèges pour admin_role
 GRANT SELECT, INSERT, DELETE, UPDATE ON db_spaceinvaders.* TO 'admin_role';
-GRANT GRANT OPTION ON db_spaceinvaders.* TO 'admin_role';
 
-GRANT SELECT, INSERT, UPDATE ON db_spaceinvaders.scores TO 'gestionnaire_role';
-GRANT SELECT, UPDATE ON db_spaceinvaders.vies TO 'gestionnaire_role';
-GRANT SELECT ON db_spaceinvaders.niveaux TO 'gestionnaire_role';
-GRANT SELECT ON db_spaceinvaders.ennemis TO 'gestionnaire_role';
-GRANT SELECT ON db_spaceinvaders.obstacles TO 'gestionnaire_role';
+-- Définir les privilèges pour gestionnaire_role
+GRANT SELECT, INSERT, UPDATE ON db_spaceinvaders.t_score TO 'gestionnaire_role';
+GRANT SELECT, UPDATE ON db_spaceinvaders.t_joueur TO 'gestionnaire_role';
+GRANT SELECT ON db_spaceinvaders.t_niveau TO 'gestionnaire_role';
+GRANT SELECT ON db_spaceinvaders.t_ennemi TO 'gestionnaire_role';
+GRANT SELECT ON db_spaceinvaders.t_obstacle TO 'gestionnaire_role';
 
-CREATE USER 'admin_jeu'@'%' IDENTIFIED BY 'admin_password';
-GRANT 'admin_role' TO 'admin_jeu'@'%';
+-- Créer les utilisateurs et leur attribuer des rôles
+CREATE USER 'admin_jeu'@'localhost' IDENTIFIED BY 'admin_password';
+GRANT 'admin_role' TO 'admin_jeu'@'localhost';
 
-CREATE USER 'gestionnaire_jeu'@'%' IDENTIFIED BY 'gestionnaire_password';
-GRANT 'gestionnaire_role' TO 'gestionnaire_jeu'@'%';
+CREATE USER 'gestionnaire_jeu'@'localhost' IDENTIFIED BY 'gestionnaire_password';
+GRANT 'gestionnaire_role' TO 'gestionnaire_jeu'@'localhost';
 
+-- Appliquer les modifications
 FLUSH PRIVILEGES;

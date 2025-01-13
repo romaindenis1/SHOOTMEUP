@@ -7,131 +7,133 @@ CREATE DATABASE db_spaceinvaders;
 USE db_spaceinvaders;
 
 -- Drop existing tables if they exist
-DROP TABLE IF EXISTS jouer_dans;
-DROP TABLE IF EXISTS etre_dans;
-DROP TABLE IF EXISTS faire_partie_de;
-DROP TABLE IF EXISTS Score;
-DROP TABLE IF EXISTS Player;
-DROP TABLE IF EXISTS Enemy;
-DROP TABLE IF EXISTS Level;  
-DROP TABLE IF EXISTS Obstacle;  
+DROP TABLE IF EXISTS t_jouer_dans;
+DROP TABLE IF EXISTS t_etre_dans;
+DROP TABLE IF EXISTS t_faire_partie_de;
+DROP TABLE IF EXISTS t_score;
+DROP TABLE IF EXISTS t_joueur;
+DROP TABLE IF EXISTS t_ennemi;
+DROP TABLE IF EXISTS t_niveau;  
+DROP TABLE IF EXISTS t_obstacle;  
 
 -- Create Level table
-CREATE TABLE Level (
-    level_id INT AUTO_INCREMENT PRIMARY KEY, 
-    levelName VARCHAR(50) 
+-- Create Level table
+-- Create Level table
+CREATE TABLE t_niveau (
+    niveau_fk INT AUTO_INCREMENT PRIMARY KEY, 
+    nom VARCHAR(50)
 );
 
 -- Create Obstacle table
-CREATE TABLE Obstacle (
-    obstacle_id INT AUTO_INCREMENT PRIMARY KEY,  
-    obstacleType VARCHAR(50) 
+CREATE TABLE t_obstacle (
+    obstacle_fk INT AUTO_INCREMENT PRIMARY KEY,  
+    sprite VARCHAR(50),
+    posX INT,
+    vieActuelle INT,
+    vieDepart INT
 );
 
 -- Create Enemy table
-CREATE TABLE Enemy (
-    enemy_id INT AUTO_INCREMENT PRIMARY KEY, 
-    baseHP INT,
+CREATE TABLE t_ennemi (
+    ennemi_fk INT AUTO_INCREMENT PRIMARY KEY, 
+    vieDepart INT,
+    vieActuelle INT,
     sprite VARCHAR(50),
     posX INT,
-    posY INT,
-    currentHP INT
+    posY INT
 );
 
 -- Create Player table
-CREATE TABLE Player (
-    player_id INT AUTO_INCREMENT PRIMARY KEY,  
-    playerName VARCHAR(50),
+CREATE TABLE t_joueur (
+    joueur_fk INT AUTO_INCREMENT PRIMARY KEY,  
+    nom VARCHAR(50),
     sprite VARCHAR(50),
     posX INT,
-    currentLives INT,
-    startingHealth INT
+    vieActuelle INT,
+    vieDepart INT
 );
 
 -- Create Score table
-CREATE TABLE Score (
-    score_id INT AUTO_INCREMENT PRIMARY KEY,  
-    creationTime DATETIME DEFAULT CURRENT_TIMESTAMP, 
+CREATE TABLE t_score (
+    score_fk INT AUTO_INCREMENT PRIMARY KEY,  
+    dateCreation DATETIME DEFAULT CURRENT_TIMESTAMP, 
     score INT,
-    level_fk INT NOT NULL,  
-    player_fk INT NOT NULL,  
-    FOREIGN KEY (level_fk) REFERENCES Level(level_id),
-    FOREIGN KEY (player_fk) REFERENCES Player(player_id)
+    niveau_fk INT NOT NULL,  
+    joueur_fk INT NOT NULL,  
+    FOREIGN KEY (niveau_fk) REFERENCES t_niveau(niveau_fk),
+    FOREIGN KEY (joueur_fk) REFERENCES t_joueur(joueur_fk)
 );
 
 -- Create faire_partie_de table
-CREATE TABLE faire_partie_de (
-    level_fk INT, 
-    enemy_fk INT,  
-    PRIMARY KEY (level_fk, enemy_fk),
-    FOREIGN KEY (level_fk) REFERENCES Level(level_id),
-    FOREIGN KEY (enemy_fk) REFERENCES Enemy(enemy_id)
+CREATE TABLE t_faire_partie_de (
+    niveau_fk INT, 
+    ennemi_fk INT,  
+    PRIMARY KEY (niveau_fk, ennemi_fk),
+    FOREIGN KEY (niveau_fk) REFERENCES t_niveau(niveau_fk),
+    FOREIGN KEY (ennemi_fk) REFERENCES t_ennemi(ennemi_fk)
 );
 
 -- Create etre_dans table
-CREATE TABLE etre_dans (
+CREATE TABLE t_etre_dans (
     obstacle_fk INT,  
-    level_fk INT,  
-    PRIMARY KEY (obstacle_fk, level_fk),
-    FOREIGN KEY (obstacle_fk) REFERENCES Obstacle(obstacle_id),
-    FOREIGN KEY (level_fk) REFERENCES Level(level_id)
+    niveau_fk INT,  
+    PRIMARY KEY (obstacle_fk, niveau_fk),
+    FOREIGN KEY (obstacle_fk) REFERENCES t_obstacle(obstacle_fk),
+    FOREIGN KEY (niveau_fk) REFERENCES t_niveau(niveau_fk)
 );
 
 -- Create jouer_dans table
-CREATE TABLE jouer_dans (
-    level_fk INT,  
-    player_fk INT, 
-    PRIMARY KEY (level_fk, player_fk),
-    FOREIGN KEY (level_fk) REFERENCES Level(level_id),
-    FOREIGN KEY (player_fk) REFERENCES Player(player_id)
+CREATE TABLE t_jouer_dans (
+    niveau_fk INT,  
+    joueur_fk INT, 
+    PRIMARY KEY (niveau_fk, joueur_fk),
+    FOREIGN KEY (niveau_fk) REFERENCES t_niveau(niveau_fk),
+    FOREIGN KEY (joueur_fk) REFERENCES t_joueur(joueur_fk)
 );
 
+-- Obstacle
+INSERT INTO t_obstacle (obstacle_fk, sprite, posX, vieDepart, vieActuelle) VALUES 
+(1, 'rock.png', 15, 100, 85),
+(2, 'tree.png', 25, 150, 140),
+(3, 'bush.png', 35, 50, 30),
+(4, 'wall.png', 45, 200, 180),
+(5, 'barrel.png', 55, 80, 70),
+(6, 'crate.png', 65, 90, 60),
+(7, 'rock.png', 75, 120, 110),
+(8, 'fence.png', 85, 110, 100),
+(9, 'stone.png', 95, 130, 120),
+(10, 'log.png', 105, 70, 50);
 
+-- Level
+INSERT INTO t_niveau (niveau_fk, nom) VALUES 
+(1, 'Espace'),
+(2, 'Foret'),
+(3, 'Chateau'),
+(4, 'Oubliettes'),
+(5, 'Montagne'),
+(6, 'Falaise'),
+(7, 'Enfer'),
+(8, 'Grotte'),
+(9, 'Cimetiere'),
+(10, 'Volcan');
 
+-- Enemy
+INSERT INTO t_ennemi (ennemi_fk, vieDepart, vieActuelle, sprite, posX, posY) VALUES
+(1, 100, 80, 'ennemi_rouge.png', 120, 200),
+(2, 150, 140, 'ennemi_bleu.png', 300, 450),
+(3, 50, 30, 'ennemi_jaune.png', 50, 100),
+(4, 200, 180, 'ennemi_vert.png', 400, 500),
+(5, 80, 60, 'ennemi_violet.png', 200, 300),
+(6, 120, 100, 'ennemi_rouge.png', 600, 700),
+(7, 110, 90, 'ennemi_bleu.png', 100, 150),
+(8, 130, 110, 'ennemi_vert.png', 500, 550),
+(9, 140, 120, 'ennemi_jaune.png', 200, 250),
+(10, 70, 50, 'ennemi_violet.png', 650, 700);
 
--- Obstacle Data
-INSERT INTO Obstacle (obstacle_id, obstacleType) VALUES 
-(1, 'lvl1_obstacle_sprite.png'),
-(2, 'lvl1_obstacle_sprite.png'),
-(3, 'lvl1_obstacle_sprite.png'),
-(4, 'lvl1_obstacle_sprite.png'),
-(5, 'lvl1_obstacle_sprite.png'),
-(6, 'lvl2_obstacle_sprite.png'),
-(7, 'lvl2_obstacle_sprite.png'),
-(8, 'lvl2_obstacle_sprite.png'),
-(9, 'lvl2_obstacle_sprite.png'),
-(10, 'lvl2_obstacle_sprite.png');
-
--- Level Data
-INSERT INTO Level (level_id, levelName) VALUES 
-(1, 'Space'),
-(2, 'Forest'),
-(3, 'Castle'),
-(4, 'Dungeon'),
-(5, 'Mountain'),
-(6, 'Ravine'),
-(7, 'Hell'),
-(8, 'Cave'),
-(9, 'Graveyard'),
-(10, 'Volcano');
-
--- Enemy Data
-INSERT INTO Enemy (enemy_id, baseHP, sprite, posX, posY, currentHP) VALUES 
-(1, 3, 'lvl1_redInvader_sprite.png', 120, 200, 1),
-(2, 5, 'lvl1_blueInvader_sprite.png', 300, 450, 5),
-(3, 2, 'lvl1_greenInvader_sprite.png', 50, 100, 1),
-(4, 6, 'lvl1_yellowInvader_sprite.png', 400, 500, 5),
-(5, 2, 'lvl1_purpleInvader_sprite.png', 200, 300, 2),
-(6, 8, 'lvl2_redInvader_sprite.png', 600, 700, 7),
-(7, 4, 'lvl2_blueInvader_sprite.png', 100, 150, 3),
-(8, 4, 'lvl2_greenInvader_sprite.png', 500, 550, 4),
-(9, 3, 'lvl2_yellowInvader_sprite.png', 200, 250, 3),
-(10, 7, 'lvl2_purpleInvader_sprite.png', 650, 700, 6);
-
--- Player Data
-INSERT INTO Player (player_id, playerName, sprite, posX, currentLives, startingHealth) VALUES 
-(1, 'Rom1', 'ship_sprite.png', 100, 3, 5),
-(2, 'Rom2', 'ship_sprite.png', 150, 1, 5),
+-- Player
+INSERT INTO t_joueur (joueur_fk, nom, sprite, posX, vieActuelle, vieDepart) VALUES 
+(1, 'Steven Stevenson', 'ship_sprite.png', 100, 3, 5),
+(2, 'Maya Cadela', 'ship_sprite.png', 150, 1, 5),
 (3, 'Fabrice', 'ship_sprite.png', 50, 3, 5),
 (4, 'MeowMan', 'ship_sprite.png', 200, 4, 5),
 (5, 'Rom3', 'ship_sprite.png', 180, 5, 4),
@@ -141,8 +143,8 @@ INSERT INTO Player (player_id, playerName, sprite, posX, currentLives, startingH
 (9, 'Graves', 'ship_sprite.png', 210, 5, 5),
 (10, 'Tahliyah', 'ship_sprite.png', 160, 5, 5);
 
--- Score Data
-INSERT INTO Score (score_id, creationTime, score, level_fk, player_fk) VALUES 
+-- Score
+INSERT INTO t_score (score_fk, dateCreation, score, niveau_fk, joueur_fk) VALUES 
 (1, '2024-09-15 12:12:12', 1000, 1, 1),
 (2, '2024-09-15 10:45:30', 850, 2, 2),
 (3, '2024-09-17 02:12:59', 950, 3, 3),
@@ -154,8 +156,8 @@ INSERT INTO Score (score_id, creationTime, score, level_fk, player_fk) VALUES
 (9, '2024-09-23 20:12:00', 970, 9, 9),
 (10, '2024-09-24 01:31:31', 1110, 10, 10);
 
--- faire_partie_de Data
-INSERT INTO faire_partie_de (level_fk, enemy_fk) VALUES 
+-- faire_partie_de
+INSERT INTO t_faire_partie_de (niveau_fk, ennemi_fk) VALUES 
 (1, 1),
 (2, 2),
 (3, 3),
@@ -167,8 +169,8 @@ INSERT INTO faire_partie_de (level_fk, enemy_fk) VALUES
 (9, 9),
 (10, 10);
 
--- etre_dans Data
-INSERT INTO etre_dans (obstacle_fk, level_fk) VALUES 
+-- etre_dans
+INSERT INTO t_etre_dans (obstacle_fk, niveau_fk) VALUES 
 (1, 1),
 (2, 2),
 (3, 3),
@@ -180,8 +182,8 @@ INSERT INTO etre_dans (obstacle_fk, level_fk) VALUES
 (9, 9),
 (10, 10);
 
--- jouer_dans Data
-INSERT INTO jouer_dans (level_fk, player_fk) VALUES 
+-- jouer_dans
+INSERT INTO t_jouer_dans  (niveau_fk, joueur_fk) VALUES 
 (1, 1),
 (2, 2),
 (3, 3),
@@ -192,4 +194,3 @@ INSERT INTO jouer_dans (level_fk, player_fk) VALUES
 (8, 8),
 (9, 9),
 (10, 10);
-

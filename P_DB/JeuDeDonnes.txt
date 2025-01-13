@@ -36,8 +36,8 @@ INSERT INTO Enemy (maxHP, posY, posX, sprite) VALUES (190, 90, 90, 'enemy9.png')
 INSERT INTO Enemy (maxHP, posY, posX, sprite) VALUES (200, 100, 100, 'enemy10.png');
 
 -- Inserting data into the Player table
-INSERT INTO Player (playerName, sprite, posX) VALUES ('Romain', 'sprite.png', 10);
-INSERT INTO Player (playerName, sprite, posX) VALUES ('Antoine', 'sprite.png', 20);
+INSERT INTO Player (playerName, sprite, posX) VALUES ('Steven Stevenson', 'sprite.png', 10);
+INSERT INTO Player (playerName, sprite, posX) VALUES ('Maya Cadela', 'sprite.png', 20);
 INSERT INTO Player (playerName, sprite, posX) VALUES ('Samu', 'sprite.png', 30);
 INSERT INTO Player (playerName, sprite, posX) VALUES ('Samu2', 'sprite.png', 40);
 INSERT INTO Player (playerName, sprite, posX) VALUES ('Rom2', 'sprite.png', 50);
