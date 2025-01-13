@@ -1,4 +1,4 @@
 # SHOOTMEUP
-Romain Denis
+Romain Denis - CID2B
 Projet UX, POO, DB
-ETML 
+ETML - Vennes

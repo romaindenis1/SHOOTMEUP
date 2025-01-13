@@ -1,13 +1,19 @@
-CREATE USER 'admin_jeu'@'%' IDENTIFIED BY 'admin_password';
-GRANT ALL PRIVILEGES ON db_spaceinvaders.* TO 'admin_jeu'@'%';
-GRANT GRANT OPTION ON db_spaceinvaders.* TO 'admin_jeu'@'%';
-FLUSH PRIVILEGES;
+CREATE ROLE 'admin_role';
+CREATE ROLE 'gestionnaire_role';
 
+GRANT SELECT, INSERT, DELETE, UPDATE ON db_spaceinvaders.* TO 'admin_role';
+GRANT GRANT OPTION ON db_spaceinvaders.* TO 'admin_role';
+
+GRANT SELECT, INSERT, UPDATE ON db_spaceinvaders.scores TO 'gestionnaire_role';
+GRANT SELECT, UPDATE ON db_spaceinvaders.vies TO 'gestionnaire_role';
+GRANT SELECT ON db_spaceinvaders.niveaux TO 'gestionnaire_role';
+GRANT SELECT ON db_spaceinvaders.ennemis TO 'gestionnaire_role';
+GRANT SELECT ON db_spaceinvaders.obstacles TO 'gestionnaire_role';
+
+CREATE USER 'admin_jeu'@'%' IDENTIFIED BY 'admin_password';
+GRANT 'admin_role' TO 'admin_jeu'@'%';
 
 CREATE USER 'gestionnaire_jeu'@'%' IDENTIFIED BY 'gestionnaire_password';
-GRANT SELECT, INSERT, UPDATE ON db_spaceinvaders.scores TO 'gestionnaire_jeu'@'%';
-GRANT SELECT, UPDATE ON db_spaceinvaders.vies TO 'gestionnaire_jeu'@'%';
-GRANT SELECT ON db_spaceinvaders.niveaux TO 'gestionnaire_jeu'@'%';
-GRANT SELECT ON db_spaceinvaders.ennemis TO 'gestionnaire_jeu'@'%';
-GRANT SELECT ON db_spaceinvaders.obstacles TO 'gestionnaire_jeu'@'%';
+GRANT 'gestionnaire_role' TO 'gestionnaire_jeu'@'%';
 
+FLUSH PRIVILEGES;
