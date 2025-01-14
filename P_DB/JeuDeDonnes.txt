@@ -1,84 +1,104 @@
 
--- Inserting data into the Obstacle table
-INSERT INTO Obstacle (posY, sprite, posX, maxHP) VALUES (10, 'rock.png', 15, 100);
-INSERT INTO Obstacle (posY, sprite, posX, maxHP) VALUES (20, 'tree.png', 25, 150);
-INSERT INTO Obstacle (posY, sprite, posX, maxHP) VALUES (30, 'bush.png', 35, 50);
-INSERT INTO Obstacle (posY, sprite, posX, maxHP) VALUES (40, 'wall.png', 45, 200);
-INSERT INTO Obstacle (posY, sprite, posX, maxHP) VALUES (50, 'barrel.png', 55, 80);
-INSERT INTO Obstacle (posY, sprite, posX, maxHP) VALUES (60, 'crate.png', 65, 90);
-INSERT INTO Obstacle (posY, sprite, posX, maxHP) VALUES (70, 'rock.png', 75, 120);
-INSERT INTO Obstacle (posY, sprite, posX, maxHP) VALUES (80, 'fence.png', 85, 110);
-INSERT INTO Obstacle (posY, sprite, posX, maxHP) VALUES (90, 'stone.png', 95, 130);
-INSERT INTO Obstacle (posY, sprite, posX, maxHP) VALUES (100, 'log.png', 105, 70);
+-- Obstacle
+INSERT INTO t_obstacle (obstacle_fk, sprite, posX, vieDepart, vieActuelle) VALUES 
+(1, 'rock.png', 15, 100, 85),
+(2, 'tree.png', 25, 150, 140),
+(3, 'bush.png', 35, 50, 30),
+(4, 'wall.png', 45, 200, 180),
+(5, 'barrel.png', 55, 80, 70),
+(6, 'crate.png', 65, 90, 60),
+(7, 'rock.png', 75, 120, 110),
+(8, 'fence.png', 85, 110, 100),
+(9, 'stone.png', 95, 130, 120),
+(10, 'log.png', 105, 70, 50);
 
--- Inserting data into the Level table
-INSERT INTO Level (nomLevel) VALUES ('Level 1');
-INSERT INTO Level (nomLevel) VALUES ('Level 2');
-INSERT INTO Level (nomLevel) VALUES ('Level 3');
-INSERT INTO Level (nomLevel) VALUES ('Level 4');
-INSERT INTO Level (nomLevel) VALUES ('Level 5');
-INSERT INTO Level (nomLevel) VALUES ('Level 6');
-INSERT INTO Level (nomLevel) VALUES ('Level 7');
-INSERT INTO Level (nomLevel) VALUES ('Level 8');
-INSERT INTO Level (nomLevel) VALUES ('Level 9');
-INSERT INTO Level (nomLevel) VALUES ('Level 10');
+-- Level
+INSERT INTO t_niveau (niveau_fk, nom) VALUES 
+(1, 'Espace'),
+(2, 'Foret'),
+(3, 'Chateau'),
+(4, 'Oubliettes'),
+(5, 'Montagne'),
+(6, 'Falaise'),
+(7, 'Enfer'),
+(8, 'Grotte'),
+(9, 'Cimetiere'),
+(10, 'Volcan');
 
--- Inserting data into the Enemi table
-INSERT INTO Enemy (maxHP, posY, posX, sprite) VALUES (100, 10, 10, 'enemy1.png');
-INSERT INTO Enemy (maxHP, posY, posX, sprite) VALUES (120, 20, 20, 'enemy2.png');
-INSERT INTO Enemy (maxHP, posY, posX, sprite) VALUES (130, 30, 30, 'enemy3.png');
-INSERT INTO Enemy (maxHP, posY, posX, sprite) VALUES (140, 40, 40, 'enemy4.png');
-INSERT INTO Enemy (maxHP, posY, posX, sprite) VALUES (150, 50, 50, 'enemy5.png');
-INSERT INTO Enemy (maxHP, posY, posX, sprite) VALUES (160, 60, 60, 'enemy6.png');
-INSERT INTO Enemy (maxHP, posY, posX, sprite) VALUES (170, 70, 70, 'enemy7.png');
-INSERT INTO Enemy (maxHP, posY, posX, sprite) VALUES (180, 80, 80, 'enemy8.png');
-INSERT INTO Enemy (maxHP, posY, posX, sprite) VALUES (190, 90, 90, 'enemy9.png');
-INSERT INTO Enemy (maxHP, posY, posX, sprite) VALUES (200, 100, 100, 'enemy10.png');
+-- Enemy
+INSERT INTO t_ennemi (ennemi_fk, vieDepart, vieActuelle, sprite, posX, posY) VALUES
+(1, 100, 80, 'ennemi_rouge.png', 120, 200),
+(2, 150, 140, 'ennemi_bleu.png', 300, 450),
+(3, 50, 30, 'ennemi_jaune.png', 50, 100),
+(4, 200, 180, 'ennemi_vert.png', 400, 500),
+(5, 80, 60, 'ennemi_violet.png', 200, 300),
+(6, 120, 100, 'ennemi_rouge.png', 600, 700),
+(7, 110, 90, 'ennemi_bleu.png', 100, 150),
+(8, 130, 110, 'ennemi_vert.png', 500, 550),
+(9, 140, 120, 'ennemi_jaune.png', 200, 250),
+(10, 70, 50, 'ennemi_violet.png', 650, 700);
 
--- Inserting data into the Player table
-INSERT INTO Player (playerName, sprite, posX) VALUES ('Steven Stevenson', 'sprite.png', 10);
-INSERT INTO Player (playerName, sprite, posX) VALUES ('Maya Cadela', 'sprite.png', 20);
-INSERT INTO Player (playerName, sprite, posX) VALUES ('Samu', 'sprite.png', 30);
-INSERT INTO Player (playerName, sprite, posX) VALUES ('Samu2', 'sprite.png', 40);
-INSERT INTO Player (playerName, sprite, posX) VALUES ('Rom2', 'sprite.png', 50);
-INSERT INTO Player (playerName, sprite, posX) VALUES ('Meow Master', 'sprite2.png', 60);
-INSERT INTO Player (playerName, sprite, posX) VALUES ('Connor', 'sprite2.png', 70);
-INSERT INTO Player (playerName, sprite, posX) VALUES ('Hank', 'sprite2.png', 80);
-INSERT INTO Player (playerName, sprite, posX) VALUES ('Maya', 'sprite2.png', 90);
-INSERT INTO Player (playerName, sprite, posX) VALUES ('Steve', 'sprite2.png', 100);
+-- Player
+INSERT INTO t_joueur (joueur_fk, nom, sprite, posX, vieActuelle, vieDepart) VALUES 
+(1, 'Steven Stevenson', 'ship_sprite.png', 100, 3, 5),
+(2, 'Maya Cadela', 'ship_sprite.png', 150, 1, 5),
+(3, 'Fabrice', 'ship_sprite.png', 50, 3, 5),
+(4, 'MeowMan', 'ship_sprite.png', 200, 4, 5),
+(5, 'Rom3', 'ship_sprite.png', 180, 5, 4),
+(6, 'Trestrestreslongnom', 'ship_sprite.png', 130, 5, 5),
+(7, 'CH', 'ship_sprite.png', 220, 5, 5),
+(8, 'Hecarim', 'ship_sprite.png', 170, 5, 5),
+(9, 'Graves', 'ship_sprite.png', 210, 5, 5),
+(10, 'Tahliyah', 'ship_sprite.png', 160, 5, 5);
 
--- Inserting data into the Score table
-INSERT INTO Score (creationTime, idLevel, idPlayer) VALUES ('2024-09-01 12:00:00', 1, 1);
-INSERT INTO Score (creationTime, idLevel, idPlayer) VALUES ('2024-09-02 12:30:00', 1, 2);
-INSERT INTO Score (creationTime, idLevel, idPlayer) VALUES ('2024-09-03 13:00:00', 1, 3);
-INSERT INTO Score (creationTime, idLevel, idPlayer) VALUES ('2024-09-04 13:30:00', 1, 4);
-INSERT INTO Score (creationTime, idLevel, idPlayer) VALUES ('2024-09-05 14:00:00', 1, 5);
-INSERT INTO Score (creationTime, idLevel, idPlayer) VALUES ('2024-09-06 14:30:00', 2, 6);
-INSERT INTO Score (creationTime, idLevel, idPlayer) VALUES ('2024-09-07 15:00:00', 2, 7);
-INSERT INTO Score (creationTime, idLevel, idPlayer) VALUES ('2024-09-08 15:30:00', 2, 8);
-INSERT INTO Score (creationTime, idLevel, idPlayer) VALUES ('2024-09-09 16:00:00', 2, 9);
-INSERT INTO Score (creationTime, idLevel, idPlayer) VALUES ('2024-09-10 16:30:00', 2, 10);
+-- Score
+INSERT INTO t_score (score_fk, dateCreation, score, niveau_fk, joueur_fk) VALUES 
+(1, '2024-09-15 12:12:12', 1000, 1, 1),
+(2, '2024-09-15 10:45:30', 850, 2, 2),
+(3, '2024-09-17 02:12:59', 950, 3, 3),
+(4, '2024-09-18 23:02:13', 1100, 4, 4),
+(5, '2024-09-19 10:12:23', 900, 5, 5),
+(6, '2024-09-20 11:12:06', 1050, 6, 6),
+(7, '2024-09-21 11:12:06', 980, 7, 7),
+(8, '2024-09-22 18:08:56', 1020, 8, 8),
+(9, '2024-09-23 20:12:00', 970, 9, 9),
+(10, '2024-09-24 01:31:31', 1110, 10, 10);
 
--- Inserting data into the faire_partie_de table
-INSERT INTO faire_partie_de (idObstacle, idLevel) VALUES (1, 1);
-INSERT INTO faire_partie_de (idObstacle, idLevel) VALUES (2, 1);
-INSERT INTO faire_partie_de (idObstacle, idLevel) VALUES (3, 2);
-INSERT INTO faire_partie_de (idObstacle, idLevel) VALUES (4, 2);
-INSERT INTO faire_partie_de (idObstacle, idLevel) VALUES (5, 3);
-INSERT INTO faire_partie_de (idObstacle, idLevel) VALUES (6, 3);
-INSERT INTO faire_partie_de (idObstacle, idLevel) VALUES (7, 4);
-INSERT INTO faire_partie_de (idObstacle, idLevel) VALUES (8, 4);
-INSERT INTO faire_partie_de (idObstacle, idLevel) VALUES (9, 5);
-INSERT INTO faire_partie_de (idObstacle, idLevel) VALUES (10, 5);
+-- faire_partie_de
+INSERT INTO t_faire_partie_de (niveau_fk, ennemi_fk) VALUES 
+(1, 1),
+(2, 2),
+(3, 3),
+(4, 4),
+(5, 5),
+(6, 6),
+(7, 7),
+(8, 8),
+(9, 9),
+(10, 10);
 
--- Inserting data into the est_dans table
-INSERT INTO est_dans (idLevel, idEnemi) VALUES (1, 1);
-INSERT INTO est_dans (idLevel, idEnemi) VALUES (1, 2);
-INSERT INTO est_dans (idLevel, idEnemi) VALUES (1, 3);
-INSERT INTO est_dans (idLevel, idEnemi) VALUES (1, 4);
-INSERT INTO est_dans (idLevel, idEnemi) VALUES (1, 5);
-INSERT INTO est_dans (idLevel, idEnemi) VALUES (2, 6);
-INSERT INTO est_dans (idLevel, idEnemi) VALUES (2, 7);
-INSERT INTO est_dans (idLevel, idEnemi) VALUES (2, 8);
-INSERT INTO est_dans (idLevel, idEnemi) VALUES (2, 9);
-INSERT INTO est_dans (idLevel, idEnemi) VALUES (2, 10);
+-- etre_dans
+INSERT INTO t_etre_dans (obstacle_fk, niveau_fk) VALUES 
+(1, 1),
+(2, 2),
+(3, 3),
+(4, 4),
+(5, 5),
+(6, 6),
+(7, 7),
+(8, 8),
+(9, 9),
+(10, 10);
+
+-- jouer_dans
+INSERT INTO t_jouer_dans  (niveau_fk, joueur_fk) VALUES 
+(1, 1),
+(2, 2),
+(3, 3),
+(4, 4),
+(5, 5),
+(6, 6),
+(7, 7),
+(8, 8),
+(9, 9),
+(10, 10);
